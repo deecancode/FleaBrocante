@@ -7,10 +7,23 @@ Meteor.startup(function () {
   }
 
   Push.Configure({
+    apn: {
+    certData: Assets.getText('fbdev.pem'),
+    keyData: Assets.getText('fbkeydev.pem'),
+    passphrase: 'hamadoun',
+    production: true,
+},
     gcm: {
       apiKey: Meteor.settings.fcm.serverKey,
       senderID: Meteor.settings.public.fcm.senderId
     },
+    production: true,
+    badge: true,
+    sound: true,
+    alert: true,
+    vibrate: true,
+    sendInterval: 3000,
+    sendBatchSize: 1
   });
 });
 
