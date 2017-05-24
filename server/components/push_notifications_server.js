@@ -18,13 +18,6 @@ Meteor.startup(function () {
   production: true,
 
 }
-    production: true,
-    badge: true,
-    sound: true,
-    alert: true,
-    vibrate: true,
-    sendInterval: 3000,
-    sendBatchSize: 1
   });
 });
 
