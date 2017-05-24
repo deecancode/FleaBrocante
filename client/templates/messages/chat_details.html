@@ -1,0 +1,74 @@
+<ion-view view-title="">
+  <ion-header-bar class="tabs-striped tabs-top tabs-light bar-subheader no-padding">
+    <chats></chats>
+  </ion-header-bar>
+  <ion-content style="background-color: #fff;">
+    <div class="padding" style="border: none;">
+      <div class="item item-avatar no-border no-margin">
+        <img
+            ng-if="vm.otherUser.profImageID === null"
+            class="click"
+            ui-sref="app.seller({ profileId: vm.otherUser._id })"
+            ng-src="{{ vm.otherUser.profImage }}" >
+        <img
+            ng-if="vm.otherUser.profImageID != null"
+            class="click"
+            ui-sref="app.seller({ profileId: vm.otherUser._id })"
+            ng-src="{{ vm.userImg.link() }}" >
+        <h2 class="click" ui-sref="app.seller({ profileId: vm.otherUser._id })" style="font-size: 16px; position: relative; top: 8px;">
+          {{ vm.otherUser.profName }}
+        </h2>
+      </div>
+      <div class="item-image click">
+        <img
+            ng-click="vm.goListing()"
+            style="width: 60%;"
+            ng-src="{{ vm.uploadImg.link() }}"
+            id="content-main" >
+      </div>
+      <br >
+      <div style="text-align: center;">
+        <h4 ng-click="vm.goListing()" class="click">{{vm.chat.prodName}}</h4>
+        <h5>Prix: {{vm.chat.agreedPrice}} FCFA</h5>
+      </div>
+      <br >
+      <button
+          ng-click="vm.itemSold()"
+          ng-disabled="vm.listing.sold === true || vm.listing.active === false"
+          ng-if="vm.listing.sold != true && vm.listing.listedBy === vm.thisUser"
+          class="button button-block button-light button-custom" >
+        Produit Vendu
+      </button>
+      <button
+          ng-disabled="vm.listing.listedBy != vm.thisUser"
+          ng-if="vm.listing.sold != true && vm.listing.listedBy != vm.thisUser"
+          class="button button-block button-clear button-balanced chat-info" >
+        Produit Disponible
+      </button>
+      <button
+          id="sold"
+          ng-disabled="vm.listing.sold === true"
+          ng-if="vm.listing.sold === true"
+          class="button button-block button-clear button-assertive chat-info-sold" >
+        Produit Vendu
+      </button>
+      <button
+          ng-click="vm.cancel()"
+          ng-if="vm.listing.sold === false && vm.chat.buyerActive === true && vm.chat.sellerActive === true"
+          class="button button-block button-light button-outline button-custom" >
+        Quitter la discussion
+      </button>
+      <button
+          ng-click="vm.cancel()"
+          ng-if="vm.chat.buyerActive === false || vm.chat.sellerActive === false || vm.listing.sold === true "
+          class="button button-block button-light button-outline button-custom">
+        Fermer
+      </button>
+    </div>
+    <div ng-if="menu.currentUser" style="padding-left: 10px;" class="item no-padding">
+<center> <a href='mailto:fleabrocante223@gmail.com?subject=Signaler la conversation avec "{{ vm.otherUser.profName }}"&body=%0A%0A%0A%0A%0A%0A%0A%0AMerci pour votre signalement%0A-------NE SUPPRIMEZ PAS CE CODE-------%0A{{vm.chat._id}}'><button class="button button-clear button-assertive assertive icon-left ion-alert-circled">
+  Signaler cette conversation
+</button></a></center>
+</div>
+  </ion-content>
+</ion-view>

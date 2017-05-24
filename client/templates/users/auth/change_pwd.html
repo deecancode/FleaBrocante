@@ -1,0 +1,25 @@
+<ion-view view-title="">
+  <ion-content class="white">
+    <div class="list no-margin">
+      <label class="item item-input item-stacked-label">
+        Mot de passe acutel
+        <input type="password" ng-model="vm.oldPassword">
+      </label>
+      <label class="item item-input item-stacked-label">
+        Mouveau mot de passe
+        <input type="password" ng-model="vm.password">
+      </label>
+      <label class="item item-input item-stacked-label">
+        Confirmer le mot de passe
+        <input type="password" ng-model="vm.confirm">
+      </label>
+    </div>
+    <div class="padding">
+      <button
+        ng-click="vm.changePass()"
+        class="button button-block button-light button-custom">
+        Changer votre mot de passe 
+      </button>
+    </div>
+  </ion-content>
+</ion-view>
