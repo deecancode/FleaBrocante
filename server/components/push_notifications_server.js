@@ -11,13 +11,6 @@ Meteor.startup(function () {
       apiKey: Meteor.settings.fcm.serverKey,
       senderID: Meteor.settings.public.fcm.senderId
     },
-    apn: {
-    certData: Assets.getText('fbdev.pem'),
-    keyData: Assets.getText('fbkeydev.pem'),
-    passphrase: 'hamadoun',
-    production: true,
-    //gateway: 'gateway.push.apple.com',
-},
     production: true,
     badge: true,
     sound: true,
