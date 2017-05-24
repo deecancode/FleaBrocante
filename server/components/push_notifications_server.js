@@ -16,7 +16,7 @@ Meteor.startup(function () {
   keyData: Assets.getText('fbkeydev.pem'),
   passphrase: 'hamadoun',
   production: true,
-  //gateway: 'gateway.push.apple.com',
+
 }
     production: true,
     badge: true,
