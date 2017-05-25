@@ -51,6 +51,7 @@ ostrio:files
 # mobile
 netanelgilad:ng-cordova
 okland:camera-ui
+raix:push
 mobile-status-bar@1.0.14
 meteorhacks:fast-render
 
@@ -64,5 +65,3 @@ shell-server@0.2.3
 
 #analytics
 #routing
-raix:push
-

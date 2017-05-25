@@ -11,13 +11,6 @@ Meteor.startup(function () {
       apiKey: Meteor.settings.fcm.serverKey,
       senderID: Meteor.settings.public.fcm.senderId
     },
-    apn: {
-    certData: Assets.getText('prod.pem'),
-    keyData: Assets.getText('prodkey.pem'),
-    passphrase: 'hamadoun',
-    gateway: 'gateway.push.apple.com',
-    production: true,
-    },
     production: true,
     badge: true,
     sound: true,
@@ -31,18 +24,18 @@ Meteor.startup(function () {
 Meteor.methods({
   'sendNotification': function(user) {
     check(user, String);
-
+    
     if( !Meteor.settings.fcm.serverKey || !Meteor.settings.public.fcm.senderId ){
 		  if( Meteor.isDevelopment ){
         console.log('Push Notifications are not enabled. Please enter your API keys for Google FCM.')
-      }
+      }      
       return;
     }
 
     Push.send({
-      from: 'FleaBrocante',
-      title: 'FleaBrocante',
-      text: 'Vous avez un nouveau message',
+      from: 'TapShop',
+      title: 'TapShop',
+      text: 'You have a new message.',
       badge: 1,
       query: {
         userId: user

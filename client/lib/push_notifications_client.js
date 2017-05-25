@@ -1,11 +1,11 @@
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(function () {
-
+  
   if( !Meteor.settings.public.fcm.senderId ){
     return;
   }
-
+  
   Push.Configure({
     android: {
       senderID: Meteor.settings.public.fcm.senderId,
@@ -15,11 +15,6 @@ Meteor.startup(function () {
       sound: true,
       alert: true,
       vibrate: true,
-    },
-    ios: {
-    alert: true,
-    badge: true,
-    sound: true,
-   }
+    }
   });
 });
