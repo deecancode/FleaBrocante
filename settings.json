@@ -31,7 +31,7 @@
     "appCode": "ZsRlNGbxT5oAQu-WJ0qthA"
   },
   "fcm": {
-    "serverKey": "AIzaSyB2xc5lXqVoCylqvQRaWmWjzLbOPROETKc"
+    "serverKey": "AAAA4T9M0hg:APA91bENPIVRqhKBnIo0B020IJ1ViMDZDMTITqsT8bX-vc3ofjhUYD0LvjHG18zg3i2udyyXuSAUQ30j6PG-C-e3NMOcbfVwH2opBsZUd7sh5ZYFatDk0yjIaXrI2rvRYzLLS4WXvTjsPv93aPw5UFd2dEwzHMF-7g"
   },
   "s3": {
     "key": "",

@@ -20,7 +20,6 @@ Meteor.startup(function () {
     alert: true,
     badge: true,
     sound: true,
-    clearBadge: true
    }
   });
 });

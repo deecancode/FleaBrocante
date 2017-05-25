@@ -8,7 +8,7 @@ Meteor.startup(function () {
         adId: Meteor.settings.public.admob.adId,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
         isTesting: false,
-        autoShow: false
+        autoShow: true
       });
     } else {
       return;

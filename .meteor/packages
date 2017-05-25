@@ -65,3 +65,4 @@ shell-server@0.2.3
 #analytics
 #routing
 raix:push
+appworkshop:raix-push-config
