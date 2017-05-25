@@ -11,6 +11,11 @@ Meteor.startup(function () {
       apiKey: Meteor.settings.fcm.serverKey,
       senderID: Meteor.settings.public.fcm.senderId
     },
+    apn: {
+    certData: Assets.getText('prod.pem'),
+    keyData: Assets.getText('prodkey.pem'),
+    passphrase: 'hamadoun',
+    },
     production: true,
     badge: true,
     sound: true,
