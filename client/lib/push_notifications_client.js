@@ -17,9 +17,10 @@ Meteor.startup(function () {
       vibrate: true,
     },
     ios: {
-  alert: true,
-  badge: true,
-  sound: true
-}
+    alert: true,
+    badge: true,
+    sound: true,
+    clearBadge: true
+   }
   });
 });
