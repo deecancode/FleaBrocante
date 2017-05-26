@@ -1,6 +1,5 @@
-<ion-view view-title="Choisissez un produit">
+<ion-view view-title="Select Product">
   <ion-content>
-         <p><center>Veuillez choisir la categorie correspondante à votre produit</center></p>
     <ul class="list no-margin">
       <li
         class="item item-thumbnail-left click"
@@ -10,11 +9,8 @@
         {{product.name}}
       </li>
       <ion-spinner ng-if="vm.isLoading" class="search-spinner" icon="spiral"></ion-spinner>
-
     </ul>
-
     <ion-infinite-scroll
-
         style="height: 0px;"
         ng-if="vm.limit < vm.allproducts"
         spinner="spiral"

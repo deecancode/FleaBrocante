@@ -5,81 +5,63 @@ if (Products.find().count() === 0) {
 console.log('Loading Products data.');
   let products = [
       {
-        name: 'Vetements',
-        image: '/images/vetements.png',
+        name: 'Gadgets',
+        image: '/images/gadgets.jpg',
         listingsCount: 0,
         productOffersCount: 0,
         productSoldCount: 0
       },
       {
-        name: 'Automobiles',
-        image: '/images/voitures.png',
+        name: 'Computers',
+        image: '/images/computers.jpg',
         listingsCount: 0,
         productOffersCount: 0,
         productSoldCount: 0
       },
       {
-        name: 'Moto',
-        image: '/images/motos.png',
+        name: 'Fashion & Clothing',
+        image: '/images/clothing.jpg',
         listingsCount: 0,
         productOffersCount: 0,
         productSoldCount: 0
       },
       {
-        name: 'Telephones',
-        image: '/images/telephones.png',
+        name: 'Accessories',
+        image: '/images/accessories.jpg',
         listingsCount: 0,
         productOffersCount: 0,
         productSoldCount: 0
       },
       {
-        name: 'Animaux domestiques',
-        image: '/images/animaux.png',
+        name: 'Toys & Hobbies',
+        image: '/images/toys.jpg',
         listingsCount: 0,
         productOffersCount: 0,
         productSoldCount: 0
       },
       {
-        name: 'Immobilier',
-        image: '/images/immobilier.png',
+        name: 'Home & Furniture',
+        image: '/images/home.jpg',
         listingsCount: 0,
         productOffersCount: 0,
         productSoldCount: 0
       },
       {
-        name: 'Ordinateurs',
-        image: '/images/ordinateurs.png',
+        name: 'Food Products',
+        image: '/images/food.jpg',
         listingsCount: 0,
         productOffersCount: 0,
         productSoldCount: 0
       },
       {
-        name: 'Meubles',
-        image: '/images/meubles.png',
+        name: 'Health & Beauty',
+        image: '/images/beauty.jpg',
         listingsCount: 0,
         productOffersCount: 0,
         productSoldCount: 0
-      },
-
-      {
-        name: 'Electronique',
-        image: '/images/electronic.png',
-        listingsCount: 0,
-        productOffersCount: 0,
-        productSoldCount: 0
-      },
-      {
-        name: 'Divers',
-        image: '/images/divers.png',
-        listingsCount: 0,
-        productOffersCount: 0,
-        productSoldCount: 0
-      }      
+      }
   ];
   products.forEach(function(product){
     Products.insert(product);
   });
-
 }
-
-

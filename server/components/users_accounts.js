@@ -26,7 +26,7 @@ Accounts.validateLoginAttempt((login) => {
 
       if( !existingUser || !existingUser.emails[0].verified ){
         Accounts.sendVerificationEmail( existingUser._id );
-        throw new Meteor.Error('Cet addresse email existe.', 'Merci de verifier votre compte.');
+        throw new Meteor.Error('Email exists.', 'Please validate your email.');
       }
       
       let operation = login.error.getOperation();
@@ -41,7 +41,7 @@ Accounts.validateLoginAttempt((login) => {
         }
       });
 
-      throw new Meteor.Error('Compte Google verifie');
+      throw new Meteor.Error('Google Account Registered');
     }
     
 
@@ -68,7 +68,7 @@ Accounts.onCreateUser(function(options, user) {
       //Error if registered email is not yet verified.
       else if ( existingUser.emails[0].verified === false )  {
         Accounts.sendVerificationEmail( existingUser._id );
-        throw new Meteor.Error('Cet addresse email existe.', 'Merci de verifier votre compte.');
+        throw new Meteor.Error('Email exists.', 'Please validate your email.');
       }
     }
     else if ( user.services.google ) {
@@ -87,7 +87,7 @@ Accounts.onCreateUser(function(options, user) {
       //Error if registered email is not yet verified.
       else if ( existingUser.emails[0].verified === false )  {
         Accounts.sendVerificationEmail( existingUser._id );
-        throw new Meteor.Error('Cet addresse email existe.', 'Merci de verifier votre compte.');
+        throw new Meteor.Error('Email exists.', 'Please validate your email.');
       }
     }
   }

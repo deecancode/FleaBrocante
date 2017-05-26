@@ -248,7 +248,7 @@ Meteor.methods({
       Accounts.sendResetPasswordEmail(user._id)
     }
     else {
-      throw new Meteor.Error('Pas verifie');
+      throw new Meteor.Error('Not Registered');
     }
   },
 
@@ -271,10 +271,10 @@ Meteor.methods({
     let usernameCheck = Accounts.findUserByUsername(username);
 
     if (emailCheck) {
-      throw new Meteor.Error('Email Existe deja');
+      throw new Meteor.Error('Email Exists');
     }
     else if (usernameCheck){
-      throw new Meteor.Error('Compte Existe deja');
+      throw new Meteor.Error('Username Exists');
     }
     else {
      return true;

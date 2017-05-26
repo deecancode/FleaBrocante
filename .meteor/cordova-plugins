@@ -6,7 +6,7 @@ cordova-plugin-file@4.3.1
 cordova-plugin-geolocation@2.4.1
 cordova-plugin-inappbrowser@1.6.1
 cordova-plugin-request-location-accuracy@2.1.1
-cordova-plugin-splashscreen@4.0.1
 cordova-plugin-x-toast@2.4.0
 ionic-plugin-keyboard@2.0.1
-phonegap-plugin-push@1.4.5
+phonegap-plugin-push@1.6.3
+cordova-plugin-splashscreen@4.0.1
