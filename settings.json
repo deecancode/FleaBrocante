@@ -19,9 +19,6 @@
   "google": {
       "secret": "VMmNwVzrX3DZkWPe3N6SL-Ov"
   },
-  "sendgrid": {
-    "apiKey": ""
-  },
   "mailgun": {
     "username": "postmaster@fleabrocante.com",
     "password": "hamadoun"
