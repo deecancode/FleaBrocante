@@ -4,9 +4,18 @@ cordova-plugin-camera@2.3.1
 cordova-plugin-device@1.1.4
 cordova-plugin-file@4.3.1
 cordova-plugin-geolocation@2.4.1
+<<<<<<< HEAD
 cordova-plugin-inappbrowser@https://github.com/apache/cordova-plugin-inappbrowser/tarball/bc9036d90a1f3f2220b5fc29b77cf2405e7fd781
 cordova-plugin-request-location-accuracy@2.1.1
 cordova-plugin-splashscreen@4.0.1
 cordova-plugin-x-toast@2.4.0
 ionic-plugin-keyboard@2.0.1
 phonegap-plugin-push@1.4.5
+=======
+cordova-plugin-inappbrowser@1.6.1
+cordova-plugin-request-location-accuracy@2.1.1
+cordova-plugin-x-toast@2.4.0
+ionic-plugin-keyboard@2.0.1
+phonegap-plugin-push@1.6.3
+cordova-plugin-splashscreen@4.0.1
+>>>>>>> 9920326ef89f399c53be1746e53782702be2c703
