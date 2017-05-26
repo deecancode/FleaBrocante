@@ -1,21 +1,17 @@
 App.accessRule( "blob:*" );
 
 App.info({
-  id: 'com.mobile.fleabrocante',
-  name: 'FleaBrocante',
-  description: 'Vente et achat',
-  author: 'Youssouf Ouologuem',
-  email: 'info@fleabrocante.com',
-  website: 'http://fleabrocante.com',
-  version: '2.0',
-});
-
-App.configurePlugin('cordova-plugin-googleplus', {
-    REVERSED_CLIENT_ID: 'com.googleusercontent.apps.967429640728-09mf9rc651ia51b9r033tora8hvspqlt'
+  id: '',
+  name: 'TapShop',
+  description: 'Social commerce app.',
+  author: 'TapGadget',
+  email: 'support@tapgadget.io',
+  website: 'tapgadget.io',
+  version: '1.7.2'
 });
 
 App.configurePlugin('phonegap-plugin-push', {
-  SENDER_ID: '967429640728'
+  SENDER_ID: 'xxx'
 });
 
 App.setPreference("AutoHideSplashScreen", "false");
