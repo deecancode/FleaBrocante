@@ -31,16 +31,6 @@ function config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     }
   })
 
-    .state('app.thanks', {
-    cache: false,
-    url: '/thanks',
-    views: {
-      'menuContent@app': {
-        templateUrl: 'client/templates/main/thanks.html',
-      }
-    }
-  })
-
   .state('app.verify', {
     url: '/shop/verify/:token',
     views: {

@@ -7,8 +7,8 @@ Meteor.startup(function () {
         adSize: 'SMART_BANNER',
         adId: Meteor.settings.public.admob.adId,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
-        isTesting: false,
-        autoShow: true
+        isTesting: true,
+        autoShow: false
       });
     } else {
       return;

@@ -39,15 +39,15 @@ function PostCtrl(
   this.getLocation = function() {
     $rootScope.$broadcast('loadspinner');
 
-    let timeout = setTimeout( function(){ 
+    let timeout = setTimeout( function(){
       $ionicLoading.hide();
       if (Meteor.isCordova) {
-        $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
-      } 
-      else {
-        toastr.error('Erreur. Veuillez réessayez.');
+        $cordovaToast.showLongBottom('Request Timeout. Please try again.');
       }
-    }, 15000);    
+      else {
+        toastr.error('Request Timeout. Please try again.');
+      }
+    }, 15000);
 
     geolocation.getCurrentPosition()
       .then( function(coords){
@@ -60,20 +60,20 @@ function PostCtrl(
             Meteor.call('updateLocation', location, coords, function(err){
               if(!err){
                 if (Meteor.isCordova) {
-                  $cordovaToast.showShortBottom('Location mise à jour');
-                } 
+                  $cordovaToast.showShortBottom('Location Updated');
+                }
                 else {
-                  toastr.success('Location mise à jour');
+                  toastr.success('Location Updated');
                 }
                 $ionicLoading.hide();
                 return;
               }
               else {
                 if (Meteor.isCordova) {
-                  $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
-                } 
+                  $cordovaToast.showLongBottom('Error. Please try again.');
+                }
                 else {
-                  toastr.error('Erreur. Veuillez réessayez.');
+                  toastr.error('Error. Please try again.');
                 }
                 $ionicLoading.hide();
               }
@@ -81,25 +81,25 @@ function PostCtrl(
           }
           else {
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
-            } 
+              $cordovaToast.showLongBottom('Error. Please try again.');
+            }
             else {
-              toastr.error('Erreur. Veuillez réessayez.');
+              toastr.error('Error. Please try again.');
             }
             $ionicLoading.hide();
           }
-        });        
+        });
         return;
       },
       function(error){
         clearTimeout(timeout);
         console.log(error.message);
-        
+
         if (Meteor.isCordova) {
-          $cordovaToast.showLongBottom('Erreur. Veuillez activer votre GPS.');
-        } 
+          $cordovaToast.showLongBottom('Error. Please enable GPS.');
+        }
         else {
-          toastr.error('Erreur. Veuillez activer votre GPS.');
+          toastr.error('Error. Please enable GPS.');
         }
         return;
       });
@@ -120,10 +120,10 @@ function PostCtrl(
     //If its a mobile app, ask if image is from camera or files.
     this.setOptions = function() {
       var optionsPopup = $ionicPopup.confirm({
-        title: 'Ajouter des photos:',
+        title: 'Add photos from:',
         scope: $scope,
         buttons: [{
-          text: '<i class="fa fa-folder-o"></i> Album Photo',
+          text: '<i class="fa fa-folder-o"></i> Files',
           type: 'button-stable',
           onTap: function() {
             self.uploadOption = 'Files';
@@ -178,7 +178,7 @@ function PostCtrl(
         });
       }
       else {
-        $cordovaToast.showShortBottom('Limite de fichiers atteinte.');
+        $cordovaToast.showShortBottom('Too many uploads.');
       }
     };
 
@@ -246,7 +246,7 @@ function PostCtrl(
           );
         }
         else {
-          $cordovaToast.showShortBottom('Limite de fichiers atteinte.');
+          $cordovaToast.showShortBottom('Too many uploads.');
         }
       }
     } else {
@@ -286,9 +286,9 @@ function PostCtrl(
     }
     else {
       if (Meteor.isCordova) {
-        $cordovaToast.showShortBottom('Limite de fichiers atteinte.');
+        $cordovaToast.showShortBottom('Too many uploads.');
       } else {
-        toastr.error('Limite de fichiers atteinte.');
+        toastr.error('Too many uploads.');
       }
     }
   };
@@ -313,7 +313,7 @@ function PostCtrl(
   //Save cropped image to array.
   $scope.uploadImg = function() {
     $scope.croppedImg = $('#newUpload').cropper('getCroppedCanvas', { width: 500, height: 500 }).toDataURL("image/jpeg", 1.0);
-    
+
     if ($scope.croppedImg) {
       let saveUpload = MeteorCameraUI.dataURIToBlob($scope.croppedImg);
 
@@ -327,9 +327,9 @@ function PostCtrl(
     }
     else {
       if (Meteor.isCordova) {
-        $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
+        $cordovaToast.showLongBottom('Error. Please try again.');
       } else {
-        toastr.error('Erreur. Veuillez réessayez.');
+        toastr.error('Error. Please try again.');
       }
       $scope.newImg = '';
       $scope.croppedImg = '';
@@ -404,11 +404,11 @@ function PostCtrl(
         self.uploads.length === 0 ||
         !this.listingTitle
     ){
-      console.log("Les champs en rouges sont obligatoires.")
+      console.log("Please fill-up all required items.")
       if (Meteor.isCordova) {
-        $cordovaToast.showLongBottom('Les champs en rouges sont obligatoires.');
+        $cordovaToast.showLongBottom('Please fill-up all required items.');
       } else {
-        toastr.error('Les champs en rouges sont obligatoires.');
+        toastr.error('Please fill-up all required items.');
       }
       if ( !this.price || isNaN( this.price.replace(/,/g, '') ) === true ) { $scope.noPrice = true; } else { $scope.noPrice = false; }
       if (!this.location) { $scope.noLocation = true; } else { $scope.noLocation = false; }
@@ -458,7 +458,7 @@ function PostCtrl(
                     uploadCount++;
                     if (uploadCount === self.uploads.length) {
                       //Insert test data. Please remove when deploying for production.
-                      $state.go('app.sell');
+          
                     } else {
                       return;
                     }
@@ -466,9 +466,9 @@ function PostCtrl(
                   else {
                     console.log("Upload Error");
                     if (Meteor.isCordova) {
-                      $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
+                      $cordovaToast.showLongBottom('Error. Please try again.');
                     } else {
-                      toastr.error('Erreur. Veuillez réessayez.');
+                      toastr.error('Error. Please try again.');
                     }
                     $ionicLoading.hide();
                     return;
@@ -478,9 +478,9 @@ function PostCtrl(
               else {
                 console.log("Upload Error");
                 if (Meteor.isCordova) {
-                  $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
+                  $cordovaToast.showLongBottom('Error. Please try again.');
                 } else {
-                  toastr.error('Erreur. Veuillez réessayez.');
+                  toastr.error('Error. Please try again.');
                 }
                 $ionicLoading.hide();
                 return;
@@ -492,9 +492,9 @@ function PostCtrl(
         else {
           $ionicLoading.hide();
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
+            $cordovaToast.showLongBottom('Error. Please try again.');
           } else {
-            toastr.error('Erreur. Veuillez réessayez.');
+            toastr.error('Error. Please try again.');
           }
         }
       });

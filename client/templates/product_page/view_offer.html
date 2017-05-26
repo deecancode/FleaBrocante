@@ -1,6 +1,6 @@
 <ion-modal-view>
     <ion-header-bar>
-        <h1 class="title">Choisissez l'acheteur:</h1>
+        <h1 class="title">Select buyer:</h1>
     </ion-header-bar>
     <ion-content>
         <ion-list>
@@ -19,7 +19,7 @@
                     <i class="fa fa-thumbs-o-up"></i> {{vm.profile(offer.offerBy).goodRating}}
                     &nbsp;
                     <i class="fa fa-thumbs-o-down"></i> {{vm.profile(offer.offerBy).badRating}}  </p>
-                <h2>Offer: {{offer.offerAmount | currency : "" : 0}} FCFA</h2>
+                <h2>Offer: {{offer.offerAmount | currency : "$" : 0}}</h2>
             </ion-radio>
         </ion-list>
         <div class="padding">
@@ -29,9 +29,9 @@
                     ng-disabled="!vm.buyer"
                     ng-click="vm.acceptOffer()"
                     class="button button-block button-light button-custom" >
-                Accepter l'offre
+                Accept Offer
             </button>
-            <button ng-click="vm.closeOffer()" class="button button-block button-light button-outline button-modal">Annuler</button>
+            <button ng-click="vm.closeOffer()" class="button button-block button-light button-outline button-modal">Cancel</button>
         </div>
     </ion-content>
 </ion-modal-view>

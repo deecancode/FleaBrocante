@@ -1,15 +1,15 @@
-<ion-view view-title="FleaBrocante">
+<ion-view view-title="TapShop">
   <ion-header-bar class="tabs-striped tabs-top tabs-light bar-subheader no-padding">
   <tabs></tabs>
   </ion-header-bar>
   <ion-content>
     <ion-refresher
-        pulling-text="Glissez pour rafraichir.."
+        pulling-text="Pull to refresh..."
         on-refresh="refresh()"
         disable-pulling-rotation="true" >
     </ion-refresher>
-    <button nav-direction="forward" style="background-color: #FCBB16;" class="button button-positive button-modal sell-button" ui-sref="app.select">
-      <i class="icon ion-android-add"></i>  Vendre un produit
+    <button nav-direction="forward" style="background-color: #1491a7;" class="button button-positive button-modal sell-button" ui-sref="app.select">
+      <i class="icon ion-android-add"></i>  Sell New Item
     </button>
     <listings></listings>
     <ion-infinite-scroll
@@ -23,13 +23,13 @@
         ng-disabled="vm.options.skip === 0"
         ng-click="vm.back()"
         class="button icon-left ion-ios-arrow-back button-paginate" >
-        Précedent
+        Back
       </a>
       <a
         ng-disabled="( vm.options.skip + vm.options.loaded ) >= vm.allposts"
         ng-click="vm.next()"
         class="button icon-right ion-ios-arrow-forward button-paginate" >
-        Suivant
+        Next
       </a>
     </div>
     </ion-content>

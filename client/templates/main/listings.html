@@ -25,11 +25,11 @@
           </span>
           <br >
           <b class="selling">
-            {{listing.sellPrice | currency : "" : 0}} FCFA
+            {{listing.sellPrice | currency : "$" : 0}}
           </b>
           <br ng-if="vm.offer(listing._id) !== false" >
           <span ng-if="vm.offer(listing._id) !== false" class="offer">
-            Meilleure Offre: {{vm.offer(listing._id).offerAmount | currency : "" : 0}} FCFA
+            Offer: {{vm.offer(listing._id).offerAmount | currency : "$" : 0}}
           </span>
           <br >
           <span ng-if="!vm.isSeller && vm.hasCoords(listing.hasLocation) === true" class="listing-condition">

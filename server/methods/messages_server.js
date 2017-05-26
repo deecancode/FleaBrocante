@@ -63,37 +63,37 @@ Meteor.methods({
     switch (action) {
       case 'Buy':
         var thisPrice = thisChat.agreedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var sysmsg = thisChat.buyerName.bold() + " veut acheter " + thisChat.prodName.bold() + " à " + thisPrice + " FCFA.";
+        var sysmsg = thisChat.buyerName.bold() + " wants to buy your " + thisChat.prodName.bold() + " for $" + thisPrice + ".";
         var msgFor = thisChat.seller;
         break;
 
       case 'Accept':
         var thisPrice = thisChat.agreedPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        var sysmsg = thisChat.sellerName.bold() + " accepter l'offre " + thisChat.prodName.bold() + " de " + thisPrice + " FCFA.";
+        var sysmsg = thisChat.sellerName.bold() + " accepts to sell this " + thisChat.prodName.bold() + " for $" + thisPrice + ".";
         var msgFor = thisChat.buyer;
         break;
 
       case 'CancelBuyer':
-        var sysmsg = thisChat.buyerName.bold() + " a quitté cette conversation.";
+        var sysmsg = thisChat.buyerName.bold() + " has left this discussion.";
         ChatRoom.update({ _id: thisChat._id },{ $set: { latestMsg: date }});
         var msgFor = thisChat.seller;
         break;
 
       case 'CancelSeller':
-        var sysmsg = thisChat.sellerName.bold() + " a quitté cette conversation.";
+        var sysmsg = thisChat.sellerName.bold() + " has left this discussion.";
         ChatRoom.update({ _id: thisChat._id },{ $set: { latestMsg: date }} );
         var msgFor = thisChat.buyer;
         break;
 
       case 'Sold':
-        var sysmsg = thisChat.sellerName.bold() + " a vendu ce produit.";
+        var sysmsg = thisChat.sellerName.bold() + " has sold this item.";
         ChatRoom.update( {_id: thisChat._id}, {$set: { latestMsg: date }} );
         var msgFor = thisChat.buyer;
         break;
     }
 
     if ( ChatRoom.findOne({ _id: chatID, $or: [{ buyer: msgFor, buyerActive: true },{ seller: msgFor, sellerActive: true }] }) ) {
-
+      
       return Messages.insert({
         chatID: thisChat._id,
         sentBy: 'system',
@@ -109,7 +109,7 @@ Meteor.methods({
       });
 
     } else {
-      console.log('Utilisateur a quitté.');
+      console.log('Other user has left.');
       return;
     }
   }

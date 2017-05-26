@@ -1,4 +1,4 @@
-<ion-view view-title="Nouveau Produit">
+<ion-view view-title="New Listing">
   <ion-content class="white">
     <div class="list">
       <!-- Upload Photo - Preview -->
@@ -53,7 +53,7 @@
             ng-click="!vm.uploadOption ? vm.setOptions() : vm.addCamera()" >
           <i class="icon ion-android-camera"></i>
           <br >
-          Ajouter une photo
+          Tap to add photo.
         </div>
         <div
             ng-show="vm.uploadOption === 'Files'"
@@ -63,7 +63,7 @@
             ng-click="!vm.uploadOption ? vm.setOptions() : vm.addFile()" >
           <i class="icon ion-android-camera"></i>
           <br >
-          Ajouter une photo
+          Tap to add photo.
         </div>
         <div
             ngf-select
@@ -78,13 +78,13 @@
             ngf-accept="'image/*'" >
           <i class="icon ion-android-camera"></i>
           <br >
-          Ajouter une photo
+          Tap to add photo.
         </div>
       </div>
       <!-- Upload Photo Options -->
       <div ng-if="vm.isApp === true" ng-click="vm.setOptions()" class="item item-input no-border no-margin no-padding" style="font-size: ">
         <span class="input-label" style="font-size: 12px; color: #14A774; padding-left: 10px;">
-          <i class="fa fa-cog fa-lg"></i> Options d'ajout
+          <i class="fa fa-cog fa-lg"></i> Add Photo Options
         </span>
       </div>
       <!--Listing Name-->
@@ -96,12 +96,12 @@
             ng-class="noTitle === true ? 'required-form' : 'text-form'"
             ng-model="vm.listingTitle"
             type="text"
-            placeholder="Titre" />
+            placeholder="Title" />
       </label>
       <!--My Location-->
       <label class="item item-input no-border">
         <span class="input-label">
-          Ma Location
+          My Location
         </span>
         <input
             class="text-form click"
@@ -110,7 +110,7 @@
             ng-keypress="vm.getLocation()"
             ng-click="vm.getLocation()"
             type="text"
-            placeholder="Localisation automatique."
+            placeholder="Get My Location."
             readonly />
       </label>
       <!-- Condition -->
@@ -121,28 +121,28 @@
                 class="specs-radio"
                 icon="ion-ios-checkmark-empty"
                 ng-model="vm.condition"
-                ng-value="'Neuf'"
+                ng-value="'New'"
                 name="condition" >
-              Nouveau
+              New
             </ion-radio>
             <ion-radio
                 class="specs-radio"
                 icon="ion-ios-checkmark-empty"
                 ng-model="vm.condition"
-                ng-value="'Seconde Main'"
+                ng-value="'Used'"
                 name="condition" >
-              Seconde main
+              Used
             </ion-radio>
           </div>
         </label>
         <!-- Price -->
         <label style="padding-top: 8px;" class="item item-input no-border">
-          <span ng-class="noPrice === true ? 'required' : ''" class="input-label">FCFA</span>
+          <span ng-class="noPrice === true ? 'required' : ''" class="input-label">$</span>
           <input
               ng-class="noPrice === true ? 'required-form' : 'text-form'"
               ng-model="vm.price"
               type="tel"
-              placeholder="Prix de vente" />
+              placeholder="Selling Price" />
         </label>
         <!-- Location -->
         <label style="padding-top: 8px;" class="item item-input no-border">
@@ -151,7 +151,7 @@
                 ng-class="noLocation === true ? 'required-form' : 'text-form'"
                 ng-model="vm.location"
                 type="text"
-                placeholder="Point de RDV" />
+                placeholder="Meeting Location" />
         </label>
         <!-- Listing Notes -->
         <label style="padding-top: 8px;" class="item item-input item-stacked-label no-border">
@@ -163,14 +163,14 @@
                 msd-elastic
                 style="resize: none; height: 61px; width: 100%; overflow:hidden;"
                 type="text"
-                placeholder="Ajoutez plus de details sur votre offre" >
+                placeholder="Anything you want the buyers to know." >
             </textarea>
         </label>
       </div>
       <!-- Submit -->
       <div class="padding">
-        <button id="post-product" ng-click="vm.submitPost()" class="button button-block button-light button-custom">Publier</button>
-        <button ng-click="vm.cancel()" class="button button-block button-light button-outline button-custom">Annuler</button>
+        <button id="post-product" ng-click="vm.submitPost()" class="button button-block button-light button-custom">Post</button>
+        <button ng-click="vm.cancel()" class="button button-block button-light button-outline button-custom">Cancel</button>
       </div>
     </ion-content>
     <!-- Remove Photo -->
@@ -179,6 +179,6 @@
         ng-click="vm.removeUpload()"
         align-title="center"
         class="bar-assertive" >
-        <h1 class="title"><i class="fa fa-trash-o fa-lg"></i> Supprimer la photo</h1>
+        <h1 class="title"><i class="fa fa-trash-o fa-lg"></i> Remove Photo</h1>
     </ion-footer-bar>
 </ion-view>

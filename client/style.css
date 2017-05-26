@@ -11,18 +11,13 @@ ion-content {
   max-width: 436px;
   margin: auto;
 }
-footer{
 
- bottom:0;
-
-}
 .bar-light.bar-custom {
-  border-bottom: 5px solid #208ee6;
-
+  border-bottom: 1px solid #14A774;
 }
 
 .bar-light.bar-custom-menu {
-  background-color: #208ee6;
+  background-color: #14A774;
 }
 
 .bar-light.bar-custom-menu .title {
@@ -31,7 +26,7 @@ footer{
 
 .button-light.button-custom,
 .button-light.button-custom:hover {
-  background-color: #208ee6;
+  background-color: #14A774;
   color: #ffffff;
 }
 
@@ -57,16 +52,16 @@ ion-list.menu-list > div.list > ion-item.item > a {
 .button-light.button-outline.button-modal,
 .button-light.button-outline.button-modal:hover,
 .button-light.button-outline.button-modal:focus {
-  border-color: #208ee6;
-  color: #208ee6;
+  border-color: #14A774;
+  color: #14A774;
   background-color: #F0F0F0;
 }
 
 .button-light.button-outline.button-custom,
 .button-light.button-outline.button-custom:hover,
 .button-light.button-outline.button-custom:focus{
-  border-color: #208ee6;
-  color: #208ee6;
+  border-color: #14A774;
+  color: #14A774;
   background-color: #ffffff;
 }
 
@@ -76,12 +71,12 @@ ion-list.menu-list > div.list > ion-item.item > a {
 .button.icon-right.ion-ios-arrow-forward.button-paginate,
 .button.icon-right.ion-ios-arrow-forward.button-paginate:hover,
 .button.icon-right.ion-ios-arrow-forward.button-paginate:focus{
-  color: #208ee6;
+  color: #14A774;
 }
 
 .button-clear.button-light.button-custom,
 .button-clear.button-light.button-custom:focus {
-  color: #208ee6;
+  color: #14A774;
   background-color: #ffffff;
 }
 
@@ -93,12 +88,12 @@ ion-list.menu-list > div.list > ion-item.item > a {
 
 .tabs-striped.tabs-light .tab-item.active,
 .tabs-striped.tabs-light .tab-item.activated {
-  color: #FCBB16;
-  border-color: #FCBB16;
+  color: #14A774;
+  border-color: #14A774;
 }
 
 p.shop-label > span > i {
-  color: #208ee6;
+  color: #14A774;
 }
 
 .search-subheader,
@@ -117,7 +112,7 @@ ion-footer-bar {
 }
 
 ion-footer-bar.bar-light.bar-location {
-  background-color: #208ee6!important;
+  background-color: #14A774!important;
 }
 
 ion-footer-bar.bar-light.bar-location > h1.title {
@@ -127,32 +122,32 @@ ion-footer-bar.bar-light.bar-location > h1.title {
 ion-footer-bar > div.button-bar > button.button-light,
 ion-footer-bar > div.button-bar > button.button-light:hover,
 ion-footer-bar > div.button-bar > button.button-light:focus {
-  background-color: #208ee6;
+  background-color: #0e7451;
   color: #ffffff;
   border-radius: 0px!important;
 }
 ion-footer-bar > div.button-bar > button.button-light.button-outline,
 ion-footer-bar > div.button-bar > button.button-light.button-outline:hover,
 ion-footer-bar > div.button-bar > button.button-light.button-outline:focus {
-  color: #208ee6;
+  color: #0e7451;
   background-color: transparent;
-  border-color: #208ee6;
+  border-color: #0e7451;
   border-radius: 0px;
 }
 
 ion-footer-bar.footer-upload > div.button-bar > button.button-light,
 ion-footer-bar.footer-upload > div.button-bar > button.button-light:hover,
 ion-footer-bar.footer-upload > div.button-bar > button.button-light:focus {
-  background-color: #208ee6;
+  background-color: #14A774;
   color: #ffffff;
   border-radius: 0px!important;
 }
 ion-footer-bar.footer-upload > div.button-bar > button.button-light.button-outline,
 ion-footer-bar.footer-upload > div.button-bar > button.button-light.button-outline:hover,
 ion-footer-bar.footer-upload > div.button-bar > button.button-light.button-outline:focus {
-  color: #208ee6;
+  color: #14A774;
   background-color: transparent;
-  border-color: #208ee6;
+  border-color: #14A774;
   border-radius: 0px;
 }
 
@@ -167,7 +162,7 @@ ion-footer-bar.footer-upload > div.button-bar > button.button-light.button-outli
   border-radius: 0px;
   background-color: #FFFFFF;
   font-size: 14px;
-  color: #208ee6;
+  color: #14A774;
 }
 
 .button-bar.button-myprofile > button.button > i {
@@ -183,7 +178,7 @@ ion-footer-bar.footer-upload > div.button-bar > button.button-light.button-outli
 }
 
 .at-btn.button.button-positive {
-  background-color: #208ee6;
+  background-color: #14A774;
 }
 
 .button-clear.button-assertive.assertive {
@@ -191,7 +186,7 @@ ion-footer-bar.footer-upload > div.button-bar > button.button-light.button-outli
 }
 
 .button-clear.button-positive.positive {
-  color: #208ee6;
+  color: #14A774;
 }
 
 .white {
@@ -257,7 +252,7 @@ ion-footer-bar.footer-upload > div.button-bar > button.button-light.button-outli
 
 .selling {
     font-size: 12px;
-    color: #FCBB16;
+    color: #14A774;
 }
 
 .offer {
@@ -306,7 +301,7 @@ ion-footer-bar.footer-upload > div.button-bar > button.button-light.button-outli
 }
 .upload-select {
     border: 1px solid;
-    border-color: #208ee6;
+    border-color: #14A774;
 }
 
 
@@ -429,11 +424,11 @@ ion-footer-bar.footer-upload > div.button-bar > button.button-light.button-outli
   text-align: left;
 }
 .chat-bubble a{
-  text-decoration:underline;
+	text-decoration:underline;
 }
 .chat-bubble.right a{
-  text-decoration:underline;
-  color: #FFFFFF!important;
+	text-decoration:underline;
+	color: #FFFFFF!important;
 }
 .chat-bubble.right {
   background-color: #5ac19d;
@@ -761,7 +756,7 @@ img.prod-default {
 
 a.terms {
   text-decoration: none;
-  color: #208ee6;
+  color: #14A774;
 }
 
 .sort-selection {
@@ -775,7 +770,7 @@ a.terms {
 }
 
 .tab-item.listing-tab {
-  color: #208ee6!important;
+  color: #14A774!important;
   max-width: 180px!important;
 }
 
@@ -788,7 +783,7 @@ a.terms {
 
 .search-button {
   font-size: 26px;
-  color: #208ee6;
+  color: #14A774;
   margin-right: 8px;
 }
 
