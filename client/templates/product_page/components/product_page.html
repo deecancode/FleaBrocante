@@ -1,0 +1,64 @@
+<div class="item" style="padding: 0px;">
+  <ion-slide-box on-slide-changed="vm.slideChanged($index)">
+    <ion-slide ng-if="vm.listing.images.length !== 0" ng-repeat="image in vm.listing.images">
+      <div class="box item-image">
+        <img id="content-main" class="ng-hide" ng-src="{{ vm.uploads(image) }}" preloader>
+        <loading></loading>
+      </div>
+    </ion-slide>
+    <loading ng-if="vm.listing.images.length === 0"></loading>
+  </ion-slide-box>
+</div>
+<div class="item">
+  <div class="row">
+    <h4 class="font-lg">{{vm.listing.title}}</h4>
+  </div>
+  <div class="row prod-row">
+    <h5 class="col col-30 font-lg" style="color: #FCBB16; font-weight: bold;">{{vm.listing.sellPrice | currency : "" : 0}} FCFA</h5>
+  </div>
+  <div ng-if="vm.isSeller === true" class="row prod-row">
+    <h5 class="font-md">
+      <i class="fa fa-eye"></i>
+      &nbsp;
+      {{ vm.listing.views }}
+    </h5>
+  </div>
+  <div class="row prod-row">
+    <h5 class="font-md">
+      <i class="icon ion-bag"></i>
+      &nbsp;
+      {{ vm.listing.condition }}<br />
+    </h5>
+  </div>
+  <div class="row prod-row">
+    <h5 class="font-md">
+      <i class="fa fa-map-marker"></i>
+      &nbsp;
+      {{ vm.listing.meetLocation }}
+    </h5>
+  </div>
+
+  <div style="padding-top: 10px;" class="row">
+    <p ng-bind-html="vm.notes(vm.listing.listingNotes)" class="font-sm prod-notes"></p>
+  </div>
+</div>
+<div ng-show="vm.postOffer" class="item" style="padding: 0px 0px 0px 16px;">
+  <div class="row prod-row">
+    <p class="font-sm" style="color: #14A774; display: inline-block;">
+      <ng-pluralize
+          count="vm.offerCount"
+          when="{ '0': '',
+                  '1': '1 Offre',
+                  'other': '{} Offres'}" >
+      </ng-pluralize>
+      &nbsp;&nbsp;&nbsp;
+      Meilleure offre: {{ vm.postOffer.offerAmount | currency : "" : 0}} FCFA
+    </p>
+  </div>
+</div>
+
+<div ng-if="menu.currentUser" style="padding-left: 16px;" class="item no-padding">
+<center> <a href='mailto:fleabrocante223@gmail.com?subject=Signaler le post "{{vm.listing.title}}"&body=%0A%0A%0A%0A%0A%0A%0A%0AMerci pour votre signalement%0A-------NE SUPPRIMEZ PAS CE CODE-------%0A{{vm.listing._id}}'><button ng-disabled="vm.profile.profName === vm.seller(vm.listing.listedBy)" class="button button-clear button-assertive assertive icon-left ion-alert-circled">
+  Signaler ce post
+</button></a></center>
+</div>

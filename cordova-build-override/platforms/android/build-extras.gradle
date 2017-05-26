@@ -1,0 +1,7 @@
+cdvVersionCode = '101002'
+android {
+  lintOptions {
+      disable 'MissingTranslation'
+      disable 'ExtraTranslation'
+  }
+}
