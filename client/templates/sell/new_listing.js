@@ -458,7 +458,7 @@ function PostCtrl(
                     uploadCount++;
                     if (uploadCount === self.uploads.length) {
                       //Insert test data. Please remove when deploying for production.
-          
+                      $state.go('app.sell');
                     } else {
                       return;
                     }
