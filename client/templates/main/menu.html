@@ -20,47 +20,53 @@
       <h1 ng-if="!menu.currentUser" class="title">
         <i style="font-size: 22px;" class="icon ion-android-person"></i>
         &nbsp;&nbsp;
-        Not Signed-in
+        Connectez-vous
       </h1>
       <h1 ng-if="menu.currentUser" class="title">
         <img class="menu-avatar" ng-if="menu.myprofile.profImageID === null" ng-src="{{ menu.myprofile.profImage }}">
         <img class="menu-avatar" ng-if="menu.myprofile.profImageID != null" ng-src="{{ menu.profileImg.link() }}">
         &nbsp;
         {{ menu.myprofile.profName }}
+
       </h1>
     </ion-header-bar>
     <ion-content>
       <ion-list class="no-margin no-border menu-list">
         <ion-item class="click no-border" menu-close ui-sref="app.shop">
-          <i class="icon ion-home"></i> Home
+          <i class="icon ion-home"></i> Acceuil
         </ion-item>
         <ion-item class="click no-border" ng-if="!menu.currentUser" menu-close ui-sref="app.login">
-          <i class="icon ion-log-in"></i> Login
+          <i class="icon ion-log-in"></i> Connexion
         </ion-item>
         <ion-item class="click no-border" ng-if="menu.currentUser" menu-close ui-sref="app.myprofile({ profileId: menu.myprofile._id })">
-          <i class="icon ion-android-person"></i> My Profile
+          <i class="icon ion-android-person"></i> Mon Profile
         </ion-item>
         <ion-item class="click no-border" ng-if="menu.currentUser" menu-close ui-sref="app.search">
-          <i class="icon ion-android-search"></i> Search
+          <i class="icon ion-android-search"></i> Rechercher
         </ion-item>
         <ion-item class="click no-border" ng-if="menu.currentUser" menu-close ui-sref="app.select">
-          <i class="icon ion-plus"></i> Sell Item
+          <i class="icon ion-plus"></i> Poster une offre
         </ion-item>
         <ion-item class="click no-border" menu-close>
-          <a href="mailto:support@tapgadget.io" style="text-decoration: none;">
-            <i class="icon ion-help"></i> Contact Support
+          <a href="mailto:fleabrocante223@gmail.com" style="text-decoration: none;">
+            <i class="icon ion-android-mail"></i> Contacter le support
           </a>
         </ion-item>
-        <ion-item ng-if="menu.isMobile === false && menu.currentUser" class="click no-border" menu-close ng-click="menu.logout()">
-          <i class="icon ion-log-out"></i> Logout
+        <ion-item ng-if="menu.isMobile === false && menu.currentUser"  class="click no-border" menu-close ng-click="menu.logout()">
+          <i class="icon ion-log-out"></i> Déconnexion
         </ion-item>
+      <ion-item class="click no-border"  menu-close ui-sref="app.thanks">
+          <i class="icon ion-help"></i> Information
+        </ion-item>
+
+     <img width="99%" src="/images/logo.png">
+     </ion-item>
       </ion-list>
-<<<<<<< HEAD
-
+        <ion-item class="click no-border">
         <center>  <a href="#" onClick="window.open('https://www.facebook.com/nabelou.ouologuem','_blank','location=yes');return false;">&copy; Nabelou</a></center>
-
-=======
->>>>>>> 385c3c8fb9c96aacecc29b6c881c1a5e280e4456
+        </ion-item>
     </ion-content>
+
   </ion-side-menu>
+
 </ion-side-menus>
