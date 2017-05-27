@@ -1,15 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(function () {
-
-  if( !Meteor.settings.fcm.serverKey || !Meteor.settings.public.fcm.senderId ){
-    return;
-  }
-
   Push.Configure({
     gcm: {
-      apiKey: Meteor.settings.fcm.serverKey,
-      senderID: Meteor.settings.public.fcm.senderId
+      apiKey: 'AIzaSyDiCqlOao_Wf1cTGb1jqNCNNVXgGcio0V0',
+      senderID: '388901352874'
     },
     production: true,
     badge: true,
@@ -25,17 +20,10 @@ Meteor.methods({
   'sendNotification': function(user) {
     check(user, String);
 
-    if( !Meteor.settings.fcm.serverKey || !Meteor.settings.public.fcm.senderId ){
-		  if( Meteor.isDevelopment ){
-        console.log('Push Notifications are not enabled. Please enter your API keys for Google FCM.')
-      }
-      return;
-    }
-
     Push.send({
-      from: 'FleaBrocante',
-      title: 'FleaBrocante',
-      text: 'Vous avez un nouveau message',
+      from: 'TapShop',
+      title: 'TapShop',
+      text: 'You have a new message.',
       badge: 1,
       query: {
         userId: user

@@ -18,7 +18,7 @@ angular
     $reactive(this).attach($scope);
     var self = this;
     this.contentLoaded = false;
-    this.noItems = "Connectez-vous pour voir vos offres"
+    this.noItems = "Login to view your posts."
 
     //Variable for pagination.
     self.paginate = false;
@@ -54,10 +54,10 @@ angular
         self.contentLoaded = true;
 
         if ( Meteor.userId() ) {
-          self.noItems = "Aucun produit en vente."
+          self.noItems = "You have no items for sale."
         } 
         else {
-          self.noItems = "Connectez-vous pour voir vos offres"
+          self.noItems = "Login to view your posts."
         }
 
         $ionicLoading.hide();
@@ -68,10 +68,10 @@ angular
           self.contentLoaded = true;
         
           if ( Meteor.userId() ) {
-            self.noItems = "Aucun produit en vente."
+            self.noItems = "You have no items for sale."
           } 
           else {
-            self.noItems = "Connectez-vous pour voir vos offres"
+            self.noItems = "Login to view your posts."
           }
           return;
         }

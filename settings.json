@@ -1,37 +1,37 @@
 {
   "public": {
     "facebook": {
-      "appId": ""
+      "appId": "320107421686246"
     },
     "admob": {
-      "adId": ""
+      "adId": "ca-app-pub-5755336834310306/7520079477"
     },
     "fcm": {
-      "senderId": ""
+      "senderId": "388901352874"
     },
     "google":{
-      "clientId": ""
-    }    
+      "clientId": "388901352874-afj7arn57t3tm6kauhlpuq7ilv8i4sg3.apps.googleusercontent.com"
+    }
   },
   "facebook": {
-    "secret": ""
+    "secret": "a4f586902ac0a880f17dd0fbfeeb01d3"
   },
   "google": {
-      "secret": ""
+      "secret": "Lt6f1xzkTlLUW0zeokp-YB1A"
   },
   "sendgrid": {
     "apiKey": ""
   },
   "mailgun": {
-    "username": "",
-    "password": ""
+    "username": "postmaster@fleabrocante.com",
+    "password": "hamadoun"
   },
   "here": {
-    "appId": "",
-    "appCode": ""
+    "appId": "TJloz0U5zyUeb7xSAjJP",
+    "appCode": "ZsRlNGbxT5oAQu-WJ0qthA"
   },
   "fcm": {
-    "serverKey": ""
+    "serverKey": "AIzaSyDiCqlOao_Wf1cTGb1jqNCNNVXgGcio0V0"
   },
   "s3": {
     "key": "",

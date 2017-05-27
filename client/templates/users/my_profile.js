@@ -109,7 +109,7 @@ function myProfCtrl (
     }, 2000);
   };
 
-  this.noFeedback = "Vous n'avez aucune note"
+  this.noFeedback = "You have no feedback."
 
   $ionicPlatform.onHardwareBackButton( function(){
     $ionicViewSwitcher.nextDirection("back");

@@ -2,13 +2,9 @@ import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(function () {
 
-  if( !Meteor.settings.public.fcm.senderId ){
-    return;
-  }
-
   Push.Configure({
     android: {
-      senderID: Meteor.settings.public.fcm.senderId,
+      senderID: 388901352874,
       iconColor: '#0C431B',
       icon: 'pushicon',
       badge: true,

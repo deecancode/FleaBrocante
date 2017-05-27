@@ -1,10 +1,10 @@
-<ion-view view-title="Flea Brocante">
+<ion-view view-title="TapShop">
   <ion-header-bar class="tabs-striped tabs-top tabs-light bar-subheader no-padding">
     <tabs></tabs>
   </ion-header-bar>
   <ion-content>
     <ion-refresher
-        pulling-text="Glissez pour rafraichir..."
+        pulling-text="Pull to refresh..."
         on-refresh="refresh()"
         disable-pulling-rotation="true" >
     </ion-refresher>
@@ -16,7 +16,7 @@
           ng-keypress="vm.search()"
           class="search-text"
           type="text"
-          placeholder="Rechercher"
+          placeholder="Search"
           style="background-color: #fff;"
           readonly />
       </label>

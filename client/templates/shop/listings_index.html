@@ -1,4 +1,4 @@
-<ion-view view-title="FleaBrocante">
+<ion-view view-title="TapShop">
   <ion-header-bar class="tabs-striped tabs-top tabs-light bar-subheader no-padding">
     <tabs ng-if="vm.isOffer === true"></tabs>
     <div ng-if="vm.isOffer === false" style="top: -4px;" class="tabs">
@@ -10,13 +10,13 @@
       <a class="tab-item listing-tab" ng-click="vm.sortOptions($event)">
         <i style="display: inline-block;" class="fa fa-sort-amount-asc" aria-hidden="true"></i>
         &nbsp;
-        Filtres
+        Sort
       </a>
     </div>
   </ion-header-bar>
   <ion-content>
     <ion-refresher
-        pulling-text="Glisser pour rafraichir..."
+        pulling-text="Pull to refresh..."
         on-refresh="refresh()"
         disable-pulling-rotation="true" >
     </ion-refresher>
@@ -32,13 +32,13 @@
         ng-disabled="vm.options.skip === 0"
         ng-click="vm.back()"
         class="button icon-left ion-ios-arrow-back button-paginate" >
-        Précedent
+        Back
       </a>
       <a
         ng-disabled="( vm.options.skip + vm.options.loaded ) >= vm.allposts"
         ng-click="vm.next()"
         class="button icon-right ion-ios-arrow-forward button-paginate" >
-        Suivant
+        Next
       </a>
     </div>
   </ion-content>
