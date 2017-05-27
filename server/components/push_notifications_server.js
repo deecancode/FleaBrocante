@@ -10,7 +10,7 @@ Meteor.startup(function () {
   certData: Assets.getText('dev.pem'),
   keyData: Assets.getText('devkey.pem'),
   passphrase: 'hamadoun',
-  production: false,
+  production: true,
   gateway: 'gateway.push.apple.com',
 },
     production: true,
