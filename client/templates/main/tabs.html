@@ -1,12 +1,12 @@
 <div style="top: -4px;" class="tabs">
   <a ng-class="activeTab === 'Shop' ? 'active' :''"  class="tab-item" ng-click="menu.selectShop()">
-    Shop
+    Acheter
   </a>
   <a ng-class="activeTab === 'Sell' ? 'active' :''" class="tab-item" ng-click="menu.selectSell()">
-    Sell
+    Vendre
   </a>
   <a ng-if="menu.currentUser" ng-class="activeTab === 'Offers' ? 'active' :''" class="tab-item" ng-click="menu.selectMyOffer()">
-    Offers
+    Mes Offres
   </a>
   <a ng-if="menu.currentUser" ng-class="activeTab === 'Chat' ? 'active' :''" class="tab-item" ng-click="menu.selectChat()">
     <i class="icon ion-ios-email-outline"></i>

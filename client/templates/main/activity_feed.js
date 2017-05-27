@@ -67,9 +67,9 @@ angular
         }
         else {
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Post is not active.');
+            $cordovaToast.showLongBottom('Post innactive.');
           } else {
-            toastr.error('Post is not active.');
+            toastr.error('Post innactive.');
           }
           return;
         }
@@ -80,9 +80,9 @@ angular
         }
         else {
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Post is not active.');
+            $cordovaToast.showLongBottom('Post innactive.');
           } else {
-            toastr.error('Post is not active.');
+            toastr.error('Post innactive.');
           }
           return;
         }
@@ -95,7 +95,7 @@ angular
       }
     }
 
-    this.noPosts = "No activities to show.";
+    this.noPosts = "Aucune activité pour le moment.";
 
     //Refresher functions.
     $scope.refresh = function() {

@@ -1,4 +1,4 @@
-<ion-view title="My Settings">
+<ion-view title="Mes réglages">
     <ion-content>
         <div class="list no-margin">
             <div class="item" style="text-align: center;">
@@ -23,7 +23,7 @@
                         ng-if="vm.preview != null"
                         class="edit-profileimg"
                         ng-src="{{vm.preview}}" >
-                    <p>Change Photo</p>
+                    <p>Changer la Photo</p>
                 </div>
                 <div
                   id="canvas"
@@ -43,7 +43,7 @@
                         ng-if="vm.preview != null"
                         class="edit-profileimg"
                         ng-src="{{vm.preview}}" >
-                    <p>Change Photo</p>
+                    <p>Changer la Photo</p>
                 </div>
             </div>
             <label class="item item-input">
@@ -51,61 +51,61 @@
                 <input type="email" ng-model="vm.email" readonly>
             </label>
             <label class="item item-input">
-                <span ng-class="noName === true ? 'required' : ''" class="input-label">Username</span>
+                <span ng-class="noName === true ? 'required' : ''" class="input-label">Nom de profile</span>
                 <input type="text" ng-model="vm.profile.profName">
             </label>
             <div ng-show="vm.hasUpload === true || vm.upload != null" style="padding-left: 16px;" class="item no-padding">
                 <button ng-click="vm.removeImg()" class="button button-clear button-assertive assertive icon-left ion-android-person">
-                    Remove Photo
+                    Supprimer Photo
                 </button>
             </div>
             <div ng-if="hasPassword === true;" style="padding-left: 16px;" class="item no-padding">
                 <button nav-direction="enter" ui-sref="app.account" class="button button-clear button-light button-custom icon-left ion-android-lock">
-                    Change Password
+                    Changer le mot de passe
                 </button>
             </div>
             <div style="padding-left: 16px;" class="item no-padding">
                 <button ng-click="vm.getLocation()" class="button button-clear button-light button-custom icon-left ion-location">
-                    Get My Location
+                    Ma location automatique
                 </button>
             </div>
             <label class="item item-input">
-                <span class="input-label">Area</span>
+                <span class="input-label">Ville</span>
                 <input
                       style="background-color: #fff;"
                       class="click"
                       type="text"
                       ng-click="vm.getLocation()"
                       ng-model="vm.profile.location.city"
-                      placeholder="Select Area"
+                      placeholder="Viller"
                       readonly >
             </label>
             <label class="item item-input">
-                <span class="input-label">Region</span>
+                <span class="input-label">Quartier</span>
                 <input
                       style="background-color: #fff;"
                       class="click"
                       type="text"
                       ng-click="vm.getLocation()"
                       ng-model="vm.profile.location.region"
-                      placeholder="Select Region"
+                      placeholder="Quartier"
                       readonly >
             </label>
             <label class="item item-input">
-                <span class="input-label">Country</span>
+                <span class="input-label">Pays</span>
                 <input
                       style="background-color: #fff;"
                       class="click"
                       type="text"
                       ng-click="vm.getLocation()"
-                      placeholder="Country"
+                      placeholder="Pays"
                       ng-model="vm.profile.location.country"
                       readonly >
             </label>
             <div class="padding">
-                <button ng-click="vm.update()" class="button button-block button-light button-custom">Update Changes</button>
+                <button ng-click="vm.update()" class="button button-block button-light button-custom">Mettre à jour</button>
                 <button ng-click="vm.logout()" class="button button-block button-clear button-light button-custom">
-                  <i class="icon ion-log-out"></i> Logout
+                  <i class="icon ion-log-out"></i> Déconnexion
                 </button>
             </div>
         </div>

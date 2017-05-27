@@ -1,8 +1,8 @@
 <div style="top: -4px;" class="tabs">
   <a ng-class="viewChat === true ? 'active' :''"  class="tab-item" ng-click="tab.selectChat()">
-    Chat
+    Discussion
   </a>
-  <a ng-class="viewChat === false ? 'active' :''" class="tab-item" ng-click="tab.selectDetails()">
+  <a ng-if="vm.chat._id !='signaler'" ng-class="viewChat === false ? 'active' :''" class="tab-item" ng-click="tab.selectDetails()">
     Details
   </a>
 </div>

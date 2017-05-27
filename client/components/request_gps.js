@@ -23,21 +23,21 @@ Meteor.startup(function () {
                           return;
                         },
                         function(error){
-                          $cordovaToast.showLongBottom('Please enable GPS to enjoy all features.');
+                          $cordovaToast.showLongBottom('Veuillez activer votre GPS pour continuer.');
                           return;
                         },
                         cordova.plugins.locationAccuracy.REQUEST_PRIORITY_LOW_POWER
                       );
                     }
                     else {
-                      $cordovaToast.showLongBottom('Please enable GPS to enjoy all features.');
+                      $cordovaToast.showLongBottom('Veuillez activer votre GPS pour continuer.');
                     }
                   },
                   cordova.plugins.locationAccuracy.REQUEST_PRIORITY_BALANCED_POWER_ACCURACY
                 )
               }
               else {
-                $cordovaToast.showLongBottom('Please enable GPS to enjoy all features.');
+                $cordovaToast.showLongBottom('Veuillez activer votre GPS pour continuer.');
               }
             },
             cordova.plugins.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY

@@ -113,9 +113,9 @@ angular
           }
           else {
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Error. Please try again.');
+              $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
             } else {
-              toastr.error('Error. Please try again.');
+              toastr.error('Erreur. Veuillez réessayez.');
             }
             $ionicLoading.hide();
             return;
@@ -135,12 +135,12 @@ angular
       let thisPost = self.listing;
       var myPopup = $ionicPopup.show({
         template: '<input type="tel" ng-model="vm.offer" autofocus>',
-        title: 'Enter your offer amount.',
+        title: 'Entrer votre prix.',
         scope: $scope,
         buttons: [{
-          text: 'Cancel'
+          text: 'Annuler'
         },{
-          text: '<b id="send-offer">Send</b>',
+          text: '<b id="send-offer">Envoyer</b>',
           type: 'button-positive',
           onTap: function(e) {
             if ( $scope.vm.offer && $scope.vm.offer > 0 ) {
@@ -153,18 +153,18 @@ angular
               Meteor.call('newOffer', sendOffer, thisPost.productID, function(err){
                 if (!err) {
                   if (Meteor.isCordova) {
-                    $cordovaToast.showShortBottom('Offer Sent');
+                    $cordovaToast.showShortBottom('Offre envoyée');
                   } else {
-                    toastr.success('Offer Sent');
+                    toastr.success('Offre envoyée');
                   }
                   //Method is located at tapshop/server/methods/feed_server.js
                   Meteor.call('insertFeed', 'newOffer', thisPost.listedBy, thisPost.title, thisPost._id );
                 }
                 else {
                   if (Meteor.isCordova) {
-                    $cordovaToast.showLongBottom('Error. Please try again.');
+                    $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                   } else {
-                    toastr.error('Error. Please try again.');
+                    toastr.error('Erreur. Veuillez réessayez.');
                   }
                 }
               });
@@ -190,7 +190,7 @@ angular
 
       var myPopup = $ionicPopup.show({
         template: '<input type="tel" ng-model="vm.myOffer.offerAmount" autofocus>',
-        title: 'Change your current offer:',
+        title: 'Revisiter votre prix:',
         scope: $scope,
         buttons: [{
           text: '<i class="fa fa-trash-o fa-lg"></i>',
@@ -201,24 +201,24 @@ angular
             Meteor.call('removeOffers', self.myOffer._id, thisPost._id, thisPost.productID, function(err) {
               if (!err) {
                 if (Meteor.isCordova) {
-                  $cordovaToast.showShortBottom('Offer Removed');
+                  $cordovaToast.showShortBottom('Offre supprimée');
                 } else {
-                  toastr.success('Offer Removed');
+                  toastr.success('Offre supprimée');
                 }
               }
               else {
                 if (Meteor.isCordova) {
-                  $cordovaToast.showLongBottom('Error. Please try again.');
+                  $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                 } else {
-                  toastr.error('Error. Please try again.');
+                  toastr.error('Erreur. Veuillez réessayez.');
                 }
               }
             });
           }
         },{
-          text: 'Back'
+          text: 'Retour'
         },{
-          text: '<b id="send-offer">Send</b>',
+          text: '<b id="send-offer">Envoyer</b>',
           type: 'button-positive',
           onTap: function(e) {
             if ( self.myOffer.offerAmount && self.myOffer.offerAmount > 0 ) {
@@ -227,9 +227,9 @@ angular
               Meteor.call('changeOffer', self.myOffer._id, parseInt( self.myOffer.offerAmount.replace(/,/g, '') ), function(err){
                 if (!err) {
                   if (Meteor.isCordova) {
-                    $cordovaToast.showShortBottom('Offer Updated');
+                    $cordovaToast.showShortBottom('Offre mise à jour');
                   } else {
-                    toastr.success('Offer Updated');
+                    toastr.success('Offre mise à jour');
                   }
 
                   //Method is located at tapshop/server/methods/feed_server.js
@@ -237,9 +237,9 @@ angular
                 }
                 else {
                   if (Meteor.isCordova) {
-                    $cordovaToast.showLongBottom('Error. Please try again.');
+                    $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                   } else {
-                    toastr.error('Error. Please try again.');
+                    toastr.error('Erreur. Veuillez réessayez.');
                   }
                 }
               });

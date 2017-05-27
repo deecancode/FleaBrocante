@@ -56,10 +56,10 @@ angular
 
     if( Meteor.status().connected === false ){
       if (Meteor.isCordova) {
-        $cordovaToast.showLongBottom('Connection error.');
+        $cordovaToast.showLongBottom('Erreur de connexion');
       } 
       else {
-        toastr.error('Connection error.');
+        toastr.error('Erreur de connexion');
       }
       $ionicLoading.hide();
       return;
@@ -85,9 +85,9 @@ angular
           if ( err.error === 'Username Exists' ){
             self.userExists = true;
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Username exists.');
+              $cordovaToast.showLongBottom('Cet utilisateur existe');
             } else {
-              toastr.error('Username exists.');
+              toastr.error('Cet utilisateur existe');
             }
             $ionicLoading.hide();
             return;
@@ -95,9 +95,9 @@ angular
           else if ( err.error === 'Email Exists' ) {
             self.emailExists = true;
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Email is already registered.');
+              $cordovaToast.showLongBottom('Cet email est deja inscrite.');
             } else {
-              toastr.error('Email is already registered.');
+              toastr.error('Cet email est deja inscrite.');
             }
 
             $ionicLoading.hide();
@@ -105,9 +105,9 @@ angular
           }
           else {
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Error. Please try again.');
+              $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
             } else {
-              toastr.error('Error. Please try again.');
+              toastr.error('Erreur. Veuillez réessayez.');
             }
             $ionicLoading.hide();
             return;
@@ -163,9 +163,9 @@ angular
         if(err){
           if( err.error === 'Email exists.' ) {
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Account is not verified. Please check your email on how to verify your account.');
+              $cordovaToast.showLongBottom('Votre compte doit etre verifiée.');
             } else {
-              toastr.error('Account is not verified. Please check your email on how to verify your account.');
+              toastr.error('Votre compte doit etre verifiée.');
             }
           }
           $state.reload('app.register');
@@ -180,10 +180,10 @@ angular
     //Oauth login with Google.
     this.googleMerged = function(){
       var alertPopup = $ionicPopup.alert({
-        title: 'Account Updated',
-        template: 'Your existing account is now registered with Google.',
+        title: 'Compte mise a jour',
+        template: 'Connexion a Google reussie.',
         okType: 'button-balanced',
-        okText: 'Continue'
+        okText: 'Continuer'
       });
     
       alertPopup.then(function(res) {
@@ -222,9 +222,9 @@ angular
           
           if( err.error === 'Email exists.' ) {
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Account is not verified. Please check your email on how to verify your account.');
+              $cordovaToast.showLongBottom('Votre compte doit etre verifié.');
             } else {
-              toastr.error('Account is not verified. Please check your email on how to verify your account.');
+              toastr.error('Votre compte doit etre verifié.');
             }
           }
           $state.reload('app.register');
@@ -243,9 +243,9 @@ angular
           if(err){
             if( err.error === 'Email exists.' ) {
               if (Meteor.isCordova) {
-                $cordovaToast.showLongBottom('Account is not verified. Please check your email on how to verify your account.');
+                $cordovaToast.showLongBottom('Votre compte doit etre verifié.');
               } else {
-                toastr.error('Account is not verified. Please check your email on how to verify your account.');
+                toastr.error('Votre compte doit etre verifié.');
               }
             }
             $state.reload('app.register');
@@ -271,10 +271,10 @@ angular
       else {
         Meteor.logout(function() {
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Error. Please try again.');
+            $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
           } 
           else {
-            toastr.error('Error. Please try again.');
+            toastr.error('Erreur. Veuillez réessayez.');
           }
 		  self.submitted = 0;
           $state.reload('app.register');
@@ -314,7 +314,7 @@ angular
               return self.insertProfile(newProfile);
             }
             else {
-              console.log( "Error getting location." );
+              console.log( "Erreur lors du chargement de la localisation" );
               return self.insertProfile(newProfile);
             }
           });
@@ -331,28 +331,28 @@ angular
         if (!err) {
 			    Meteor.call('sendVerifyEmail', Meteor.userId(), function(err){
 				    if (Meteor.isCordova) {
-            		$cordovaToast.showShortBottom('Account Registered');
+            		$cordovaToast.showShortBottom('Compte enregistré');
           	} 
             else {
-            	toastr.success('Account Registered');
+            	toastr.success('Compte enregistré');
           	}
           	$state.go('app.shop');
 			    });
         }
         else {
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Error. Please try again.');
+            $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
           } else {
-            toastr.error('Error. Please try again.');
+            toastr.error('Erreur. Veuillez réessayez.');
           }
 		  self.submitted = 0;
           //Method is located at tapshop/server/methods/profile_server.js
           Meteor.call('signupError', function(err){
             Meteor.logout(function() {
               if (Meteor.isCordova) {
-                $cordovaToast.showLongBottom('Error. Please try again.');
+                $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
               } else {
-                toastr.error('Error. Please try again.');
+                toastr.error('Erreur. Veuillez réessayez.');
               }
               $state.reload('app.register');
             });

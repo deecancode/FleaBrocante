@@ -138,9 +138,9 @@ angular
           }
           else {
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Error. Please try again.');
+              $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
             } else {
-              toastr.error('Error. Please try again.');
+              toastr.error('Erreur. Veuillez réessayez.');
             }
             $ionicLoading.hide();
             return;
@@ -149,7 +149,7 @@ angular
       }
     }
     else {
-      console.log('Please select a buyer.');
+      console.log('Choisissez un acheteur.');
       $ionicLoading.hide();
       return;
     }
@@ -160,7 +160,7 @@ angular
     let thisPost = self.listing;
     let myPopup = $ionicPopup.show({
           template: '<input type="tel" ng-model="vm.listing.sellPrice" autofocus>',
-          title: 'Enter your new selling price:',
+          title: 'Entrer votre prix revisité:',
           scope: $scope,
           buttons: [{
             text: 'Cancel',
@@ -169,7 +169,7 @@ angular
               myPopup.close();
             }
           },{
-            text: '<b>Update</b>',
+            text: '<b>Mettre à jour</b>',
             type: 'button-positive',
             onTap: function(e) {
               if ( $scope.vm.listing.sellPrice ) {
@@ -179,9 +179,9 @@ angular
                 Meteor.call('changePrice', thisPost._id, newAmount, function(err, success) {
                   if (!err) {
                     if (Meteor.isCordova) {
-                      $cordovaToast.showShortBottom('Price Updated');
+                      $cordovaToast.showShortBottom('Prix mis à jour');
                     } else {
-                      toastr.success('Price Updated');
+                      toastr.success('Prix mis à jour');
                     }
                     if ( Offers.find({listingID: thisPost._id}).count() !== 0 ) {
                       Offers.find({listingID: thisPost._id}).forEach( function(thisOffer) {
@@ -192,9 +192,9 @@ angular
                   }
                   else {
                     if (Meteor.isCordova) {
-                      $cordovaToast.showLongBottom('Error. Please try again.');
+                      $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                     } else {
-                      toastr.error('Error. Please try again.');
+                      toastr.error('Erreur. Veuillez réessayez.');
                     }
                   }
                 });
@@ -211,13 +211,13 @@ angular
   this.delete = function() {
     let thisPost = self.listing;
     let confirmPopup = $ionicPopup.confirm({
-      title: 'Delete Post',
-      template: 'Do you want to delete this post?',
+      title: ' Supprimer le produit',
+      template: 'Voulez-vous supprimer ce produit?',
       scope: $scope,
       buttons: [{
-        text: 'Cancel'
+        text: 'Anuller'
       },{
-        text: '<b>Delete</b>',
+        text: '<b>Supprimer</b>',
         type: 'button-assertive',
         onTap: function() {
           $rootScope.$broadcast('loadspinner');
@@ -225,17 +225,17 @@ angular
           Meteor.call('removeListing', thisPost._id, function(err) {
             if (!err) {
               if (Meteor.isCordova) {
-                $cordovaToast.showShortBottom('Post Removed');
+                $cordovaToast.showShortBottom('Produit supprimé');
               } else {
-                toastr.success('Post Removed');
+                toastr.success('Produit supprimé');
               }
               $state.go('app.sell');
             }
             else {
               if (Meteor.isCordova) {
-                $cordovaToast.showLongBottom('Error. Please try again.');
+                $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
               } else {
-                toastr.error('Error. Please try again.');
+                toastr.error('Erreur. Veuillez réessayez.');
                 $ionicLoading.hide();
               }
             }

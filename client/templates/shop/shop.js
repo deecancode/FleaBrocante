@@ -56,7 +56,7 @@ function ShopCtrl (
           window.localStorage.setItem('products', JSON.stringify(self.products) );
           
           self.contentLoaded = true;
-          self.noPosts = 'No posts available.';
+          self.noPosts = 'Pas de produits disponibles.';
 
           $ionicLoading.hide();
           return;        
@@ -65,7 +65,7 @@ function ShopCtrl (
       onStop: function(err){
         if(err){
           self.contentLoaded = true;
-          self.noPosts = "No internet connection.";
+          self.noPosts = "Verifier votre connexion internet";
           return;
         }
       }
@@ -135,16 +135,16 @@ function ShopCtrl (
     Accounts.verifyEmail($stateParams.token, function(err){
       if(!err) {
         if (Meteor.isCordova) {
-          $cordovaToast.showShortBottom('Account Verified');
+          $cordovaToast.showShortBottom('Compte verifié');
         } else {
-          toastr.success('Account Verified');
+          toastr.success('Compte verifié');
         }
         $ionicLoading.hide();
       } else {
         if (Meteor.isCordova) {
-          $cordovaToast.showLongBottom('Could not verify. Please try again.');
+          $cordovaToast.showLongBottom('Impossible de verifier le compte.');
         } else {
-          toastr.error('Could not verify. Please try again.');
+          toastr.error('Impossible de verifier le compte.');
         }
         $ionicLoading.hide();
       }

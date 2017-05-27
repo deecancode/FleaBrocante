@@ -122,9 +122,9 @@ function MenuCtrl (
           else {
             $ionicLoading.hide();
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Error. Please try again.');
+              $cordovaToast.showLongBottom('Erreur.');
             } else {
-              toastr.error('Error. Please try again.');
+              toastr.error('Erreur.');
             }
             return
           }

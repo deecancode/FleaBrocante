@@ -59,10 +59,10 @@ function EditCtrl (
       self.price = self.post.sellPrice.toString();
 
       if ( self.post.condition !== 'New') {
-        self.condition = 'Used';
+        self.condition = 'Seconde Main';
       }
       else {
-        self.condition = 'New';
+        self.condition = 'Neuf';
       }
       if ( self.post.images.length !== 0 && self.preview.length === 0 && self.uploads.length === 0  && self.removeUploaded.length === 0 ) {
         for (let i = 0; i < self.post.images.length; i++) {
@@ -85,10 +85,10 @@ function EditCtrl (
     let timeout = setTimeout( function(){ 
       $ionicLoading.hide();
       if (Meteor.isCordova) {
-        $cordovaToast.showLongBottom('Request Timeout. Please try again.');
+        $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
       } 
       else {
-        toastr.error('Request Timeout. Please try again.');
+        toastr.error('Erreur. Veuillez réessayez.');
       }
     }, 15000);       
 
@@ -103,20 +103,20 @@ function EditCtrl (
             Meteor.call('updateLocation', location, coords, function(err){
               if(!err){
                 if (Meteor.isCordova) {
-                  $cordovaToast.showShortBottom('Location Updated');
+                  $cordovaToast.showShortBottom('Location mise à jour');
                 } 
                 else {
-                  toastr.success('Location Updated');
+                  toastr.success('Location mise à jour');
                 }
                 $ionicLoading.hide();
                 return;
               }
               else {
                 if (Meteor.isCordova) {
-                  $cordovaToast.showLongBottom('Error. Please try again.');
+                  $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                 } 
                 else {
-                  toastr.error('Error. Please try again.');
+                  toastr.error('Erreur. Veuillez réessayez.');
                 }
                 $ionicLoading.hide();
               }
@@ -124,10 +124,10 @@ function EditCtrl (
           }
           else {
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Error. Please try again.');
+              $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
             } 
             else {
-              toastr.error('Error. Please try again.');
+              toastr.error('Erreur. Veuillez réessayez.');
             }
             $ionicLoading.hide();
           }
@@ -139,10 +139,10 @@ function EditCtrl (
         console.log(error.message);
         
         if (Meteor.isCordova) {
-          $cordovaToast.showLongBottom('Error. Please enable GPS.');
+          $cordovaToast.showLongBottom('Erreur. Activez le GPS.');
         } 
         else {
-          toastr.error('Error. Please enable GPS.');
+          toastr.error('Erreur. Activez le GPS.');
         }
         return;
       });
@@ -152,7 +152,7 @@ function EditCtrl (
     //If its a mobile app, ask if image is from camera or files.
     this.setOptions = function() {
       var optionsPopup = $ionicPopup.confirm({
-        title: 'Add photos from:',
+        title: 'Ajouter des photos:',
         scope: $scope,
         buttons: [{
           text: '<i class="fa fa-folder-o"></i> Files',
@@ -210,7 +210,7 @@ function EditCtrl (
         });
       }
       else {
-        $cordovaToast.showShortBottom('Too many uploads.');
+        $cordovaToast.showShortBottom('Limite maximale atteinte.');
       }
     };
     if ( $cordovaDevice.getPlatform() === "Android" /* && $cordovaDevice.getVersion().indexOf("4.4") === 0 */ ) {
@@ -276,7 +276,7 @@ function EditCtrl (
           );
         }
         else {
-          $cordovaToast.showShortBottom('Too many uploads.');
+          $cordovaToast.showShortBottom('Limite maximale atteinte.');
         }
       }
     } else {
@@ -315,9 +315,9 @@ function EditCtrl (
     }
     else {
       if (Meteor.isCordova) {
-        $cordovaToast.showShortBottom('Too many uploads.');
+        $cordovaToast.showShortBottom('Limite maximale atteinte.');
       } else {
-        toastr.error('Too many uploads.');
+        toastr.error('Limite maximale atteinte.');
       }
     }
   };
@@ -362,11 +362,11 @@ function EditCtrl (
       $('#newUpload').cropper('destroy');
     }
     else {
-      console.log("Error saving image.");
+      console.log("Erreur");
       if (Meteor.isCordova) {
-        $cordovaToast.showLongBottom('Error. Please try again.');
+        $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
       } else {
-        toastr.error('Error. Please try again.');
+        toastr.error('Erreur. Veuillez réessayez.');
       }
       $scope.newImg = '';
       $scope.croppedImg = '';
@@ -448,9 +448,9 @@ function EditCtrl (
         ( !self.post.title )
     ){
       if (Meteor.isCordova) {
-        $cordovaToast.showLongBottom('Please fill-up all required fields.');
+        $cordovaToast.showLongBottom('Les champs en rouge sont obligatoires.');
       } else {
-        toastr.error('Please fill-up all required fields.');
+        toastr.error('Les champs en rouge sont obligatoires.');
       }
       if ( !self.price || isNaN( self.price.replace(/,/g, '') ) === true ) { self.noPrice = true; } else { self.noPrice = false; }
       if ( !self.post.meetLocation ) { self.noLocation = true; } else { self.noLocation = false; }
@@ -466,11 +466,11 @@ function EditCtrl (
         //Method is located at tapshop/server/methods/listings_server.js
         Meteor.call('removeUpload', self.post._id, self.removeUploaded[i], function(err) {
           if (err) {
-            console.log("Failed to remove image.");
+            console.log("Impossible de supprimer la photo.");
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Error. Please try again.');
+              $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
             } else {
-              toastr.error('Error. Please try again.');
+              toastr.error('Erreur. Veuillez réessayez.');
             }
             $ionicLoading.hide();
             return;
@@ -496,9 +496,9 @@ function EditCtrl (
               Meteor.call('insertFeed', 'updatePost', thisoffer.offerBy, self.post.title, self.post._id, function(){
                 if (err){
                   if (Meteor.isCordova) {
-                    $cordovaToast.showLongBottom('Error. Please try again.');
+                    $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                   } else {
-                    toastr.error('Error. Please try again.');
+                    toastr.error('Erreur. Veuillez réessayez.');
                   }
                   $ionicLoading.hide();
                 }
@@ -532,9 +532,9 @@ function EditCtrl (
                         uploadCount++;
                         if (uploadCount === self.uploads.length) {
                           if (Meteor.isCordova) {
-                            $cordovaToast.showShortBottom('Post Updated');
+                            $cordovaToast.showShortBottom('Offre mise à jour');
                           } else {
-                            toastr.success('Post Updated');
+                            toastr.success('Offre mise à jour');
                           }
                           $state.go('app.myproduct', { listingId: self.post._id });
                         } else {
@@ -542,11 +542,11 @@ function EditCtrl (
                         }
                       }
                       else {
-                        console.log("Upload Error");
+                        console.log("Erreur de chargement");
                         if (Meteor.isCordova) {
-                          $cordovaToast.showLongBottom('Error. Please try again.');
+                          $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                         } else {
-                          toastr.error('Error. Please try again.');
+                          toastr.error('Erreur. Veuillez réessayez.');
                         }
                         $ionicLoading.hide();
                         return;
@@ -554,11 +554,11 @@ function EditCtrl (
                     });
                   }
                   else {
-                    console.log("Upload Error");
+                    console.log("Erreur de chargement");
                     if (Meteor.isCordova) {
-                      $cordovaToast.showLongBottom('Error. Please try again.');
+                      $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                     } else {
-                      toastr.error('Error. Please try again.');
+                      toastr.error('Erreur. Veuillez réessayez.');
                     }
                     $ionicLoading.hide();
                     return;
@@ -570,9 +570,9 @@ function EditCtrl (
                 uploadCount++;
                 if (uploadCount === self.uploads.length) {
                   if (Meteor.isCordova) {
-                    $cordovaToast.showShortBottom('Post Updated');
+                    $cordovaToast.showShortBottom('Offre mise à jour');
                   } else {
-                    toastr.success('Post Updated');
+                    toastr.success('Offre mise à jour');
                   }
                   $state.go('app.myproduct', { listingId: self.post._id });
                 } else {
@@ -583,9 +583,9 @@ function EditCtrl (
           }
         } else {
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Error. Please try again.');
+            $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
           } else {
-            toastr.error('Error. Please try again.');
+            toastr.error('Erreur. Veuillez réessayez.');
           }
           $ionicLoading.hide();
         }

@@ -100,7 +100,7 @@ function EditProfCtrl (
                 return;
               },
               function(error){
-                $cordovaToast.showLongBottom('Error. Please try again.');
+                $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                 $ionicLoading.hide();
                 return;
               });
@@ -111,7 +111,7 @@ function EditProfCtrl (
           }
         },
         function (error) {
-          $cordovaToast.showLongBottom('Error. Please try again.');
+          $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
           $ionicLoading.hide();
           return;
         },
@@ -159,10 +159,10 @@ function EditProfCtrl (
     let timeout = setTimeout( function(){ 
       $ionicLoading.hide();
       if (Meteor.isCordova) {
-        $cordovaToast.showLongBottom('Request Timeout. Please try again.');
+        $cordovaToast.showLongBottom('Erreur. Veuillez réessayez');
       } 
       else {
-        toastr.error('Request Timeout. Please try again.');
+        toastr.error('Erreur. Veuillez réessayez');
       }
     }, 15000);
 
@@ -182,27 +182,27 @@ function EditProfCtrl (
 
             if ( !geoloc.city || !geoloc.region ) {
               if (Meteor.isCordova) {
-                $cordovaToast.showLongBottom('Error. Please try again.');
+                $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
               } else {
-                toastr.error('Error. Please try again.');
+                toastr.error('Erreur. Veuillez réessayez.');
               }
               $ionicLoading.hide();
             }
             else {
               if (Meteor.isCordova) {
-                $cordovaToast.showShortBottom('Location Updated');
+                $cordovaToast.showShortBottom('Location mise à jour');
               } else {
-                toastr.success('Location Updated');
+                toastr.success('Location mise à jour');
               }
               $ionicLoading.hide();
             }
           }
           else {
-            console.log( "Error getting geolocation, please try again later." );
+            console.log( "Erreur de chargement de la localisation. Veuillez réessayez." );
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Error. Please try again.');
+              $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
             } else {
-              toastr.error('Error. Please try again.');
+              toastr.error('Erreur. Veuillez réessayez.');
             }
             $ionicLoading.hide();
             return null;
@@ -212,9 +212,9 @@ function EditProfCtrl (
       function(error){
         clearTimeout(timeout);   
         if (Meteor.isCordova) {
-          $cordovaToast.showLongBottom('Error. Please enable GPS.');
+          $cordovaToast.showLongBottom('Erreur. Activer votre GPS');
         } else {
-          toastr.error('Error. Please enable GPS.');
+          toastr.error('Erreur. Activer votre GPS');
         }
         $ionicLoading.hide();
         return;
@@ -227,11 +227,11 @@ function EditProfCtrl (
   this.update = function() {
     if ( !self.profile.profName ) {
       $scope.noName = true;
-      console.log("Please fill-up username.");
+      console.log("Nom du profile.");
       if (Meteor.isCordova) {
-        $cordovaToast.showLongBottom('Username is required.');
+        $cordovaToast.showLongBottom('Nom du profile est obligatoire.');
       } else {
-        toastr.error('Username is required.');
+        toastr.error('Nom du profile est obligatoire.');
       }
       return;
     }
@@ -244,11 +244,11 @@ function EditProfCtrl (
         //Method is located at tapshop/lib/methods/profile.js
         Meteor.call('removeImage', this.imgremove, function(err) {
           if (err) {
-            console.log('Error removing image.');
+            console.log('Erreur de suppression de la photo.');
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Error. Please try again.');
+              $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
             } else {
-              toastr.error('Error. Please try again.');
+              toastr.error('Erreur. Veuillez réessayez.');
             }
             $ionicLoading.hide();
             return;
@@ -292,18 +292,18 @@ function EditProfCtrl (
                           Meteor.call('updateProfImg', fileObj._id, function(err){
                             if(!err){
                               if (Meteor.isCordova) {
-                                $cordovaToast.showShortBottom('Profile Updated');
+                                $cordovaToast.showShortBottom('rofile mis à jour');
                               } else {
-                                toastr.success('Profile Updated');
+                                toastr.success('rofile mis à jour');
                               }
                               $state.go('app.myprofile');
                             }
                             else {
                               console.log(err);
                               if (Meteor.isCordova) {
-                                $cordovaToast.showLongBottom('Error. Please try again.');
+                                $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                               } else {
-                                toastr.error('Error. Please try again.');
+                                toastr.error('Erreur. Veuillez réessayez.');
                               }
                               $ionicLoading.hide();
                               return;
@@ -313,9 +313,9 @@ function EditProfCtrl (
                         else {
                           console.log(err);
                           if (Meteor.isCordova) {
-                            $cordovaToast.showLongBottom('Error. Please try again.');
+                            $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                           } else {
-                            toastr.error('Error. Please try again.');
+                            toastr.error('Erreur. Veuillez réessayez.');
                           }
                           $ionicLoading.hide();
                           return;
@@ -325,9 +325,9 @@ function EditProfCtrl (
                     }
                     else {
                       if (Meteor.isCordova) {
-                        $cordovaToast.showLongBottom('Error. Please try again.');
+                        $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                       } else {
-                        toastr.error('Error. Please try again.');
+                        toastr.error('Erreur. Veuillez réessayez.');
                       }
                       $ionicLoading.hide();
                       return;
@@ -348,18 +348,18 @@ function EditProfCtrl (
                       Meteor.call('updateProfImg', fileObj._id, function(err){
                         if(!err){
                           if (Meteor.isCordova) {
-                            $cordovaToast.showShortBottom('Profile Updated');
+                            $cordovaToast.showShortBottom('Profile mise à jour');
                           } else {
-                            toastr.success('Profile Updated');
+                            toastr.success('Profile mise à jour');
                           }
                           $state.go('app.myprofile');
                         }
                         else {
                           console.log(err);
                           if (Meteor.isCordova) {
-                            $cordovaToast.showLongBottom('Error. Please try again.');
+                            $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                           } else {
-                            toastr.error('Error. Please try again.');
+                            toastr.error('Erreur. Veuillez réessayez.');
                           }
                           $ionicLoading.hide();
                           return;
@@ -369,9 +369,9 @@ function EditProfCtrl (
                     else {
                       console.log(err);
                       if (Meteor.isCordova) {
-                        $cordovaToast.showLongBottom('Error. Please try again.');
+                        $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                       } else {
-                        toastr.error('Error. Please try again.');
+                        toastr.error('Erreur. Veuillez réessayez.');
                       }
                       $ionicLoading.hide();
                       return;
@@ -382,19 +382,19 @@ function EditProfCtrl (
               }
               else {
                 if (Meteor.isCordova) {
-                  $cordovaToast.showShortBottom('Profile Updated');
+                  $cordovaToast.showShortBottom('Profile mise à jour');
                 } else {
-                  toastr.success('Profile Updated');
+                  toastr.success('Profile mise à jour');
                 }
                 $state.go('app.myprofile');
               }
             }
             else {
-              console.log("Update error, please try again.");
+              console.log("Erreur de chargement, Veuillez réessayez.");
               if (Meteor.isCordova) {
-                $cordovaToast.showLongBottom('Error. Please try again.');
+                $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
               } else {
-                toastr.error('Error. Please try again.');
+                toastr.error('Erreur. Veuillez réessayez.');
               }
               $ionicLoading.hide();
               return;
@@ -404,17 +404,17 @@ function EditProfCtrl (
         else if ( result === false ){
           $scope.noName = true;
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('New username already exists.');
+            $cordovaToast.showLongBottom('Cet compte existe.');
           } else {
-            toastr.error('New username already exists.');
+            toastr.error('Ce compte existe.');
           }
           $ionicLoading.hide();
         }
         else {
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Error. Please try again.');
+            $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
           } else {
-            toastr.error('Error. Please try again.');
+            toastr.error('Erreur. Veuillez réessayez.');
           }
           $ionicLoading.hide();
         }
@@ -432,9 +432,9 @@ function EditProfCtrl (
           } else {
               $ionicLoading.hide();
               if (Meteor.isCordova) {
-                $cordovaToast.showLongBottom('Error. Please try again.');
+                $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
               } else {
-                toastr.error('Error. Please try again.');
+                toastr.error('Erreur. Veuillez réessayez.');
               }
               return
           }

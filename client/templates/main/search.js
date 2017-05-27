@@ -145,7 +145,7 @@ function SearchCtrl (
       $state.go('app.product', { listingId: listingId });
     };
 
-    this.noResults = "No items found.";
+    this.noResults = "Aucun produit trouvé.";
 
     //Pagination Back Button.
     this.back = function() {
@@ -189,10 +189,10 @@ function SearchCtrl (
       if( Session.get('myCoordinates') ){
         var myPopup = $ionicPopup.show({
           template: '<input type="tel" ng-model="vm.max" autofocus>',
-          title: 'Set Max Distance (in KM)',
+          title: 'Distance Maximale (en KM)',
           scope: $scope,
           buttons: [{
-            text: 'Cancel',
+            text: 'Annuler',
             onTap: function(e) {
               self.max = self.options.distance;
             }
@@ -232,9 +232,9 @@ function SearchCtrl (
       }
       else {
         if (Meteor.isCordova) {
-          $cordovaToast.showLongBottom('Please enable GPS and try again.');
+          $cordovaToast.showLongBottom('Activez le GPS et réessayez.');
         } else {
-          toastr.error('Please enable GPS and try again.');
+          toastr.error('Activez le GPS et réessayez.');
         }
       }
 

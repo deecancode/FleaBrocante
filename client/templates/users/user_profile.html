@@ -1,7 +1,7 @@
-<ion-view title="User Profile">
+<ion-view title="Profile">
   <ion-content>
     <ion-refresher
-        pulling-text="Pull to refresh..."
+        pulling-text="Glissez pour rafraichir..."
         on-refresh="refresh()"
         disable-pulling-rotation="true" >
     </ion-refresher>
@@ -34,13 +34,18 @@
         </span>
       </div>
     </div>
+                    <div ng-if="menu.currentUser" style="padding-left: 10px;" class="item no-padding">
+  <center> <a href='mailto:fleabrocante223@gmail.com?subject=Signaler "{{ vm.profile.profName }}"&body=%0A%0A%0A%0A%0A%0A%0A%0AMerci pour votre signalement%0A-------NE SUPPRIMEZ PAS CE CODE-------%0A{{vm.profile._id}}'><button class="button button-clear button-assertive assertive icon-left ion-alert-circled">
+                  Signaler cet utilisateur
+                </button></a></center>
+            </div>
     <div class="tabs-striped tabs-light tabs-top">
       <div class="tabs profile-tabs">
         <a class="tab-item active" ng-click="vm.viewFeedback()" ng-class="{'active': vm.view === true}" >
-          Feedback
+          Commentaires
         </a>
         <a class="tab-item" ng-click="vm.viewPosts()" ng-class="{'active': vm.view === false}" >
-          Posts
+          Offres
         </a>
       </div>
     </div>
@@ -85,13 +90,13 @@
         ng-disabled="vm.posts.skip === 0"
         ng-click="vm.back()"
         class="button icon-left ion-ios-arrow-back button-paginate" >
-        Back
+        Précedent
       </a>
       <a
         ng-disabled="( vm.posts.skip + vm.posts.loaded ) >= vm.allposts"
         ng-click="vm.next()"
         class="button icon-right ion-ios-arrow-forward button-paginate" >
-        Next
+        Suivant
       </a>
     </div>
   </ion-content>

@@ -1,5 +1,5 @@
 {
-  "name": "tapshop",
+  "name": "FleaBrocante",
   "private": true,
   "scripts": {
     "start": "meteor run"

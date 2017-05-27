@@ -22,25 +22,25 @@ angular
           Meteor.call('resetPwd', self.email, function(err){
             if (!err){
               if (Meteor.isCordova) {
-                $cordovaToast.showShortBottom('Email Sent');
+                $cordovaToast.showShortBottom('Email envoyé');
               } else {
-                toastr.success('Email Sent');
+                toastr.success('Email envoyé');
               }
               $ionicLoading.hide();
             }
-            else if (err.error === 'Not Registered') {
+            else if (err.error === 'Pas inscrit') {
               if (Meteor.isCordova) {
-                $cordovaToast.showLongBottom('Email is not registered.');
+                $cordovaToast.showLongBottom('Email non inscrite.');
               } else {
-                toastr.error('Email is not registered.');
+                toastr.error('Email non inscrite.');
               }
               $ionicLoading.hide();
             }
             else {
               if (Meteor.isCordova) {
-                $cordovaToast.showLongBottom('Error. Please try again.');
+                $cordovaToast.showLongBottom('Erreur. Veuillez reessayer.');
               } else {
-                toastr.error('Error. Please try again.');
+                toastr.error('Erreur. Veuillez reessayer.');
               }
               $ionicLoading.hide();
             }
@@ -48,9 +48,9 @@ angular
         }
         else if ( regex.test(self.email) === false ) {
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Invalid email address.');
+            $cordovaToast.showLongBottom('Address email invalide');
           } else {
-            toastr.error('Invalid email address.');
+            toastr.error('Addresse email invalide');
           }
         } else { return; }
       }
@@ -64,25 +64,25 @@ angular
             Accounts.resetPassword($stateParams.token, self.password, function(err){
               if(!err) {
                 if (Meteor.isCordova) {
-                  $cordovaToast.showShortBottom('Password Changed');
+                  $cordovaToast.showShortBottom('Mot de passe changé');
                 } else {
-                  toastr.success('Password Changed');
+                  toastr.success('Mot de pass changé');
                 }
                 $state.go('app.shop');
                 }
               else {
                 if(err.error === 403) {
                   if (Meteor.isCordova) {
-                    $cordovaToast.showLongBottom('Reset link expired.');
+                    $cordovaToast.showLongBottom('Le lien de renitialization a expiré');
                   } else {
-                    toastr.error('Reset link expired.');
+                    toastr.error('Le lien de renitialization a expiré');
                   }
                 }
                 else {
                   if (Meteor.isCordova) {
-                    $cordovaToast.showLongBottom('Error. Please try again.');
+                    $cordovaToast.showLongBottom('Erreur. Veuillez reessayer.');
                   } else {
-                    toastr.error('Error. Please try again.');
+                    toastr.error('Erreur. Veuillez reessayer.');
                   }
                 }
                 $ionicLoading.hide();
@@ -91,17 +91,17 @@ angular
           }
           else {
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Passwords do not match.');
+              $cordovaToast.showLongBottom('Les mots de passe ne sont pas identiques');
             } else {
-              toastr.error('Passwords do not match.');
+              toastr.error('Les mots de passe ne sont pas indentiques');
             }
             $ionicLoading.hide();
           }
         } else if ( self.password.length < 6 ) {
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Password should contain at least 6 characters.');
+            $cordovaToast.showLongBottom('Le mot de passe doit contenir au moins 6 characteres.');
           } else {
-            toastr.error('Password should contain at least 6 characters.');
+            toastr.error('Le mot de passe doit contenir au moins 6 characteres');
           }
         }
         else { return; }

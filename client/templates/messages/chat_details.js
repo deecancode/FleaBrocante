@@ -67,13 +67,13 @@ function MsgInfoCtrl (
   //Function for user to cancel and leave chat.
   this.cancel = function() {
     var cancelPopup = $ionicPopup.confirm({
-      title: 'Leave Chat',
-      template: 'Close and leave this discussion?',
+      title: 'Quitter la conversation',
+      template: 'Voulez-vous quitter cette conversation?',
       scope: $scope,
       buttons: [{
-        text: 'No'
+        text: 'Non'
       },{
-        text: '<b>Yes</b>',
+        text: '<b>Oui</b>',
         type: 'button-assertive',
         onTap: function() {
           if ( self.msgCount >= 4 ) {
@@ -111,10 +111,10 @@ function MsgInfoCtrl (
         if (!err) {
           
           if (Meteor.isCordova) {
-            $cordovaToast.showShortBottom('You have left this chat.');
+            $cordovaToast.showShortBottom('Vous avez quitté la conversation.');
           } 
           else {
-            toastr.success('You have left this chat.');
+            toastr.success('Vous avez quitté la conversation.');
           }
           $state.go('app.chatlist');
 
@@ -122,10 +122,10 @@ function MsgInfoCtrl (
         else {
           
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Error. Please try again.');
+            $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
           } 
           else {
-            toastr.error('Error. Please try again.');
+            toastr.error('Erreur. Veuillez réessayez.');
           }
           $ionicLoading.hide();
 
@@ -144,10 +144,10 @@ function MsgInfoCtrl (
         if (!err) {
 
           if (Meteor.isCordova) {
-            $cordovaToast.showShortBottom('Chat Removed');
+            $cordovaToast.showShortBottom('Conversation supprimée');
           } 
           else {
-            toastr.success('Chat Removed');
+            toastr.success('Conversation supprimée:');
           }
           
           $state.go('app.chatlist');
@@ -155,10 +155,10 @@ function MsgInfoCtrl (
         }
         else {
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Error. Please try again.');
+            $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
           } 
           else {
-            toastr.error('Error. Please try again.');
+            toastr.error('Erreur. Veuillez réessayez.');
           }
           $ionicLoading.hide();
         }
@@ -169,13 +169,13 @@ function MsgInfoCtrl (
   //Set the listing as sold and remove from public view.
   this.itemSold = function() {
     var soldPopup = $ionicPopup.confirm({
-      title: 'Confirm Sold',
-      template: 'Item already sold to this buyer?',
+      title: 'Confirmer vendu',
+      template: 'Produit déjà vendu?',
       scope: $scope,
       buttons: [{
-        text: 'No'
+        text: 'Non'
       },{
-        text: '<b>Yes</b>',
+        text: '<b>Oui</b>',
         type: 'button-assertive',
         onTap: function() {
           $rootScope.$broadcast('loadspinner');
@@ -187,17 +187,17 @@ function MsgInfoCtrl (
                 //Method is located at tapshop/server/methods/messages_server.js
                 Meteor.call('systemMsg', 'Sold', self.chat._id);
                 if (Meteor.isCordova) {
-                  $cordovaToast.showShortBottom('Product Sold');
+                  $cordovaToast.showShortBottom('Produit vendu');
                 } else {
-                  toastr.success('Product Sold');
+                  toastr.success('Produit vendu');
                 }
                 $state.go('app.chat', { chatId: $stateParams.chatId });
               }
               else {
                 if (Meteor.isCordova) {
-                  $cordovaToast.showLongBottom('Error. Please try again.');
+                  $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                 } else {
-                  toastr.error('Error. Please try again.');
+                  toastr.error('Erreur. Veuillez réessayez.');
                 }
                 $ionicLoading.hide();
               }
@@ -249,17 +249,17 @@ function MsgInfoCtrl (
         Meteor.call('insertFeed', 'postFeedback', self.otherUser.profID, null, self.otherUser.profID);
         $scope.modal.remove();
         if (Meteor.isCordova) {
-          $cordovaToast.showShortBottom('Rating Sent');
+          $cordovaToast.showShortBottom('Note envoyée.');
         } else {
-          toastr.success('Rating Sent');
+          toastr.success('Note envoyée.');
         }
         return self.removeChat();
       }
       else {
         if (Meteor.isCordova) {
-          $cordovaToast.showLongBottom('Error. Please try again.');
+          $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
         } else {
-          toastr.error('Error. Please try again.');
+          toastr.error('Erreur. Veuillez réessayez.');
         }
         $ionicLoading.hide();
       }

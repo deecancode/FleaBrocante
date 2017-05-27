@@ -2,12 +2,12 @@
   <ion-content class="white">
     <div style="padding-bottom: 5px;" class="padding">
       <button id="signin" ng-click="vm.loginGoogle()" style="margin: 0px; color: #d34836; border-color: #d34836;" class="button button-block button-outline button-assertive">
-        <i class="fa fa-google-plus fa-lg"></i>&nbsp;&nbsp;Sign-Up with Google
+        <i class="fa fa-google-plus fa-lg"></i>&nbsp;&nbsp;S'inscrire avec Google
       </button>
     </div>
     <div style="padding-bottom: 20px;" class="padding">
       <button id="signin" ng-click="vm.loginFB()" style="margin: 0px; color: #3b5998; border-color: #3b5998;" class="button button-block button-outline button-positive">
-        <i class="fa fa-facebook fa-lg"></i>&nbsp;&nbsp;Sign-Up with Facebook
+        <i class="fa fa-facebook fa-lg"></i>&nbsp;&nbsp;S'incrire avec Facebook
       </button>
     </div>
     <form ng-submit="vm.register()">
@@ -18,74 +18,76 @@
           <span
             ng-if="vm.noEmail === true && vm.invalidEmail === false && vm.emailExists === false"
             style="font-size: 12px; color: red;">
-            Required
+            Obligatoire
           </span>
           <span ng-if="vm.invalidEmail === true && vm.emailExists === false"
             style="font-size: 12px; color: red;">
-            Invalid email.
+            Mot de passe incorrect
           </span>
           <span
             ng-if="vm.emailExists === true"
             style="font-size: 12px; color: red;">
-            Email is already registered.
+          Cet email est deja inscrit.
           </span>
         </label>
         <label class="item item-input item-stacked-label">
-          Username
+          Nom d'utilisateur
           <input ng-focus="vm.clearUser()" type="text" ng-model="vm.username">
           <span
             ng-if="vm.invalidUser === true && vm.userExists === false && vm.noUser === false"
             style="font-size: 12px; color: red;">
-            Invalid username.
+             Nom d'utilisateur incorrect
           </span>
           <span
             ng-if="vm.noUser === true && vm.userExists === false && vm.invalidUser === false"
             style="font-size: 12px; color: red;">
-            Required
+            Obligatoire
           </span>
           <span
             ng-if="vm.userExists === true"
             style="font-size: 12px; color: red;">
-            Username exists.
+             Nom d'utilisateur existe
           </span>
         </label>
         <label class="item item-input item-stacked-label">
-          Password
+          Mot de passe
           <input ng-focus="vm.clearPass()" type="password" ng-model="vm.password">
           <span
             ng-if="vm.noPass === true && vm.pwdMismatch === false"
             style="font-size: 12px; color: red;">
-            Required
+            Obligatoire
           </span>
           <span
             ng-if="vm.noPass === false && vm.invalidPass === true"
             style="font-size: 12px; color: red;">
-            Password must have minimum of 6 characters.
+            Mot de passe doit contenir au moins 6 characteres
           </span>
           <span
             ng-if="vm.pwdMismatch === true && vm.invalidPass === false"
             style="font-size: 12px; color: red;">
-            Passwords do not match.
+            Mots de passe non identiques
           </span>
         </label>
         <label class="item item-input item-stacked-label">
-          Confirm Password
+          Confirmer le mot de passe
           <input ng-focus="vm.clearConfirm()" type="password" ng-model="vm.confirm">
           <span
             ng-if="vm.noConfirm === true && vm.pwdMismatch === false"
             style="font-size: 12px; color: red;">
-            Required
+            Obligatoire
           </span>
           <span
             ng-if="vm.pwdMismatch === true"
             style="font-size: 12px; color: red;">
-            Passwords do not match.
+            Mots de passe non identiques.
           </span>
         </label>
-      </div>    
+      </div>
       <div style="margin-top: 10px;" class="padding">
+      <center>  <p>En vous inscrivant vous accepter les conditions d'utilisation de cette application; veuillez lire les termes dans le menu "Information"</p></center>
+
         <button ng-click="vm.register()" class="button button-block button-light button-custom">
-          Register
+          S'inscrire
         </button>
       </div>
     </form>

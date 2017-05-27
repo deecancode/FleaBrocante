@@ -1,7 +1,7 @@
 <ion-view view-title="">
   <ion-content>
     <ion-refresher
-        pulling-text="Pull to refresh..."
+        pulling-text="Glissez pour rafraichir..."
         on-refresh="refresh()"
         disable-pulling-rotation="true" >
     </ion-refresher>
@@ -26,6 +26,7 @@
       </div>
     </ion-content>
     <ion-footer-bar align-title="left" class="button-bar footer-prod">
+      
       <div class="button-bar">
         <button
             ng-if="vm.hasOffer === 0"
@@ -35,7 +36,7 @@
             style="font-size: 14px; padding: 0px;" >
 
           <i style="display: inline-block;" class="icon ion-paper-airplane"></i>
-          <p class="prod-footer-label">Send Offer</p>
+          <p class="prod-footer-label">Envoyer une offre</p>
         </button>
         <button
             ng-if="vm.hasOffer != 0"
@@ -45,8 +46,9 @@
             style="font-size: 14px; padding: 0px;" >
 
           <i style="display: inline-block;" class="icon ion-paper-airplane"></i>
-          <p class="prod-footer-label">Change Offer</p>
+          <p class="prod-footer-label">Changer l'offre</p>
         </button>
+
         <button
             id="accept-user"
             class="button button-light"
@@ -55,8 +57,9 @@
             style="font-size: 14px; padding: 0px;" >
 
           <i style="display: inline-block;" class="fa fa-commenting fa-lg"></i>
-          <p class="prod-footer-label">Buy Now</p>
+          <p class="prod-footer-label">Acheter</p>
         </button>
       </div>
+
     </ion-footer-bar>
 </ion-view>

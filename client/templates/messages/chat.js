@@ -84,10 +84,10 @@ function MsgCtrl (
           }
           else {
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Error. Please try again.');
+              $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
               cordova.plugins.Keyboard.close();
             } else {
-              toastr.error('Error. Please try again.');
+              toastr.error('Erreur. Veuillez réessayez.');
               document.getElementById("chatInput").blur();
             }
           }
@@ -97,10 +97,10 @@ function MsgCtrl (
     }
     else {
       if (Meteor.isCordova) {
-        $cordovaToast.showLongBottom('Other user has left.');
+        $cordovaToast.showLongBottom('Cet utilisateur a quitter votre conversation.');
         cordova.plugins.Keyboard.close();
       } else {
-        toastr.error('Other user has left.');
+        toastr.error('Cet utilisateur a quitter votre conversation.');
         document.getElementById("chatInput").blur();
       }
       this.body = '';

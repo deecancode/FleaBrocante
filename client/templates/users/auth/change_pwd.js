@@ -35,17 +35,17 @@ angular
               $ionicLoading.hide();
               if ( err.error === 403 ){
                 if (Meteor.isCordova) {
-                  $cordovaToast.showLongBottom('Current password is invalid.');
+                  $cordovaToast.showLongBottom('Mot de passe incorrect');
                 } else {
-                  toastr.error('Current password is invalid.');
+                  toastr.error('Mot de passe incorrect');
                 }
                 return;
               }
               else {
                 if (Meteor.isCordova) {
-                  $cordovaToast.showLongBottom('Error. Please try again.');
+                  $cordovaToast.showLongBottom('Erreur. Veuillez réessayez.');
                 } else {
-                  toastr.error('Error. Please try again.');
+                  toastr.error('Erreur. Veuillez réessayez.');
                 }
                 return;
               }
@@ -55,9 +55,9 @@ angular
               self.password = '';
               self.confirm = '';
               if (Meteor.isCordova) {
-                $cordovaToast.showShortBottom('Password Changed');
+                $cordovaToast.showShortBottom('Mot de passe change');
               } else {
-                toastr.success('Password Changed');
+                toastr.success('Mot de passe change');
               }
               Meteor.logoutOtherClients();
               $ionicLoading.hide();
@@ -69,33 +69,33 @@ angular
           $ionicLoading.hide();
           if( !self.oldPassword ){
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Please enter current password.');
+              $cordovaToast.showLongBottom('Veuillez taper votre mot de passe actuel');
             } else {
-              toastr.error('Please enter current password.');
+              toastr.error('Veuillez taper votre mot de passe actuel');
             }
             return;
           }
           else if( self.oldPassword === self.password ){
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('New password must not be the same.');
+              $cordovaToast.showLongBottom('Mots de passe non identiques');
             } else {
-              toastr.error('New password must not be the same.');
+              toastr.error('Mots de passe non identiques');
             }
             return;
           }
           else if ( !self.password || passwordRegex.test(self.password) === false ){
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Password must have minimum of 6 characters.');
+              $cordovaToast.showLongBottom('Mot de passe doit contenir au moins 6 characteres');
             } else {
-              toastr.error('Password must have minimum of 6characters.');
+              toastr.error('Mot de passe doit contenir au moins 6 characteres');
             }
             return;
           }
           else if (self.password !== self.confirm){
             if (Meteor.isCordova) {
-              $cordovaToast.showLongBottom('Passwords do not match.');
+              $cordovaToast.showLongBottom('Mots de passe non identiques');
             } else {
-              toastr.error('Passwords do not match.');
+              toastr.error('Mots de passe non identiques');
             }
             return;
           }

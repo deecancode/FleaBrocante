@@ -6,6 +6,13 @@ Meteor.startup(function () {
       apiKey: 'AIzaSyDiCqlOao_Wf1cTGb1jqNCNNVXgGcio0V0',
       senderID: '388901352874'
     },
+    apn: {
+  certData: Assets.getText('prod.pem'),
+  keyData: Assets.getText('prodkey.pem'),
+  passphrase: 'hamadoun',
+  production: true,
+  gateway: 'gateway.push.apple.com',
+},
     production: true,
     badge: true,
     sound: true,
@@ -21,9 +28,9 @@ Meteor.methods({
     check(user, String);
 
     Push.send({
-      from: 'TapShop',
-      title: 'TapShop',
-      text: 'You have a new message.',
+      from: 'FleaBrocante',
+      title: 'FleaBrocante',
+      text: 'Vous avez un nouveau message.',
       badge: 1,
       query: {
         userId: user

@@ -10,8 +10,8 @@ function calendar () {
     if (!time) return;
 
     return moment(time).calendar(null, {
-      lastDay : '[Yesterday]',
-      sameDay : '[Today], LT',
+      lastDay : '[Hier]',
+      sameDay : '[Moins de 24h], LT',
       lastWeek : 'll',
       sameElse : 'll'
     });

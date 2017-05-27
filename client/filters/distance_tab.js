@@ -6,7 +6,7 @@ angular
 
 function distanceTab () {
   return function (limit) {
-    if (!limit) return 'No Limit';
+    if (!limit) return 'Pas de limite';
 
     if ( limit < 1 ) {
       return (limit * 1000).toFixed(0) + ' m';

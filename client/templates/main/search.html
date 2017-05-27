@@ -1,10 +1,10 @@
-<ion-view view-title="Search">
+<ion-view view-title="Rechercher">
   <ion-header-bar style="height: auto; border: 0px; border-style: none;" class="bar-subheader bar-stable no-padding search-subheader">
     <div style="margin-bottom: 10px;" class="list list-inset">
       <form ng-submit="vm.onEnter()">
         <div id="searchbox" class="item item-input">
           <i class="icon ion-search placeholder-icon"></i>
-          <input id="search-input" type="search" placeholder="Search" ng-model="vm.search">
+          <input id="search-input" type="search" placeholder="Rechercher" ng-model="vm.search">
           <i
             class="icon ion-android-more-vertical placeholder-icon click search-button"
             ng-click="vm.showOptions($event)" >
@@ -41,7 +41,7 @@
               </span>
               <br >
               <b class="selling">
-                {{listing.sellPrice | currency : "$" : 0}}
+                {{listing.sellPrice | currency : "" : 0}} FCFA
               </b>
               <br >
               <span ng-if="vm.hasCoords(listing.hasLocation) === true" class="listing-condition">
@@ -66,13 +66,13 @@
         ng-disabled="vm.options.skip < 10"
         ng-click="vm.back()"
         class="button icon-left ion-ios-arrow-back button-paginate" >
-        Back
+        Précedent
       </a>
       <a
         ng-disabled="vm.options.skip >= 20 || vm.searchData.count <= (vm.options.skip + 10)"
         ng-click="vm.next()"
         class="button icon-right ion-ios-arrow-forward button-paginate" >
-        Next
+        Suivant
       </a>
     </div>
   </ion-content>

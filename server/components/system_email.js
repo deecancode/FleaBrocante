@@ -1,33 +1,33 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 
-Accounts.emailTemplates.siteName = "TapShop";
-Accounts.emailTemplates.from = "TapShop Accounts <noreply@tapshop.tk>";
+Accounts.emailTemplates.siteName = "FleaBrocante";
+Accounts.emailTemplates.from = "Email <info@fleabrocante.com>";
 
 //System email templates for Verify Account and Reset Password.
 
 Accounts.emailTemplates.verifyEmail.subject = function (user) {
-    return "Verify your account.";
+    return "Verifier votre compte.";
 };
 
 Accounts.emailTemplates.verifyEmail.text = function (user, url) {
-   return "Hi " + user.username + ",\n\n\n"
-      + "Thank you for joining. Please click on the link below to verify your account:\n\n"
+   return "Bonjour " + user.username + ",\n\n\n"
+      + "Merci pour votre inscription. Cliquez sur le lien ci-dessous pour confirmer votre compte.\n\n"
       + url
       + "\n\n\n\n\n\n"
-      + "TapShop";
+      + "L'Equipe FleaBrocante";
 };
 
 Accounts.emailTemplates.resetPassword.subject = function (user) {
-    return "Forgot password.";
+    return "Mot de passe oublié.";
 };
 
 Accounts.emailTemplates.resetPassword.text = function (user, url) {
-   return "Hi " + user.username + ",\n\n\n"
-      + "Please click on the link below to reset your password:\n\n"
+   return "Bonjour " + user.username + ",\n\n\n"
+      + "Cliquez sur le lien ci-dessous pour renitialiser votre mot de passe.\n\n"
       + url
       + "\n\n\n\n\n\n"
-      + "TapShop";
+      + "L'Equipe FleaBrocante";
 };
 
 Accounts.urls.verifyEmail = (token) => {

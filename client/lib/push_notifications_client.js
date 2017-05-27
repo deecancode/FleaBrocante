@@ -11,6 +11,11 @@ Meteor.startup(function () {
       sound: true,
       alert: true,
       vibrate: true,
-    }
+    },
+ios: {
+  alert: true,
+  badge: true,
+  sound: true
+}
   });
 });

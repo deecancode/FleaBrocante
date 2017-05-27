@@ -14,42 +14,42 @@ Meteor.methods({
     switch (action) {
       case 'newOffer':
         var type = 'mypost';
-        var feedmsg = "<b>" + username + "</b>" + " sent an offer to your post: " + "<b>" + listing + "." + "</b>";
+        var feedmsg = "<b>" + username + "</b>" + " vous a envoyé une offre pour: " + "<b>" + listing + "." + "</b>";
         break;
 
         case 'changeOffer':
           var type = 'mypost';
-          var feedmsg = "<b>" + username + "</b>" + " has changed the offer amount on your post: " + "<b>" + listing + "." + "</b>";
+          var feedmsg = "<b>" + username + "</b>" + " a changé le montant de son offre pour: " + "<b>" + listing + "." + "</b>";
           break;
 
         case 'removeBuyer':
           var type = null;
-          var feedmsg = "<b>" + username + "</b>" + " has declined your offer for: " + "<b>" + listing + "." + "</b>";
+          var feedmsg = "<b>" + username + "</b>" + " refusé votre offre pour: " + "<b>" + listing + "." + "</b>";
           break;
 
         case 'postFeedback':
           var type = 'profile';
-          var feedmsg = "<b>" + username + "</b>" + " posted a feedback about you."
+          var feedmsg = "<b>" + username + "</b>" + " vous a noté."
           break;
 
         case 'changePrice':
           var type = 'listing';
-          var feedmsg = "<b>" + username + "</b>" + " has changed the selling price on " + "<b>" + listing + "." + "</b>";
+          var feedmsg = "<b>" + username + "</b>" + " a changé le prix de " + "<b>" + listing + "." + "</b>";
           break;
 
         case 'updatePost':
           var type = 'listing';
-          var feedmsg = "<b>" + username + "</b>" + " has updated details on the post: " + "<b>" + listing + "." + "</b>";
+          var feedmsg = "<b>" + username + "</b>" + " a mis a jour les de details de " + "<b>" + listing + "." + "</b>";
           break;
 
         case 'soldProduct':
           var type = null;
-          var feedmsg = "<b>" + username + "</b>" + " has already sold the item: " + "<b>" + listing + "." + "</b>";
+          var feedmsg = "<b>" + username + "</b>" + " a deja vendu: " + "<b>" + listing + "." + "</b>";
           break;
 
         case 'removePost':
           var type = null;
-          var feedmsg = "<b>" + username + "</b>" + " has removed the post for: " + "<b>" + listing + "." + "</b>";
+          var feedmsg = "<b>" + username + "</b>" + " a supprimé le produit " + "<b>" + listing + "." + "</b>";
           break;
         }
         Feeds.insert({

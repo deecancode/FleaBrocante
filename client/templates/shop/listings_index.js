@@ -83,7 +83,7 @@ function ListingsCtrl(
         onStop: function(err){
           if(err){
             self.contentLoaded = true;
-            self.noPosts = "No internet connection.";
+            self.noPosts = "Verifiez votre connextion internet";
             return;
           }
         }
@@ -197,15 +197,15 @@ function ListingsCtrl(
     if( Session.get('myCoordinates') ){
       var myPopup = $ionicPopup.show({
         template: '<input type="tel" ng-model="vm.max" autofocus>',
-        title: 'Set Max Distance (in KM)',
+        title: 'Distance maximale (en KM)',
         scope: $scope,
         buttons: [{
-          text: 'Cancel',
+          text: 'Annuler',
           onTap: function(e) {
             self.max = self.options.distance;
           }
         },{
-          text: '<b>Set</b>',
+          text: '<b>Appliquer</b>',
           type: 'button-positive',
           onTap: function(e) {
 
@@ -270,9 +270,9 @@ function ListingsCtrl(
     }
     else {
       if (Meteor.isCordova) {
-        $cordovaToast.showLongBottom('Please enable GPS and try again.');
+        $cordovaToast.showLongBottom('Veuillez activer votre GPS');
       } else {
-        toastr.error('Please enable GPS and try again.');
+        toastr.error('Veuillez activer votre GPS');
       }
     }
   }
@@ -325,9 +325,9 @@ function ListingsCtrl(
         }
         else {
           if (Meteor.isCordova) {
-            $cordovaToast.showLongBottom('Please enable GPS and try again.');
+            $cordovaToast.showLongBottom('Veuillez activer votre GPS');
           } else {
-            toastr.error('Please enable GPS and try again.');
+            toastr.error('Veuillez activer votre GPS');
           }
           $ionicLoading.hide();
           self.sort = self.options.sort || 'date';

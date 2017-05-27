@@ -235,9 +235,9 @@ angular
 
     this.isSeller = $state.is('app.sell');
 
-    this.noPosts = "User has no active posts.";
+    this.noPosts = "Cet utilisateur n'a aucune offre";
 
-    this.noFeedback = "User has no feedback.";
+    this.noFeedback = "Cet utilisateur n'a pas de note.";
 
     $scope.$on('$ionicView.afterEnter', function (event, viewData) {
       if ( document.getElementById("content-main") !== null ) {

@@ -29,7 +29,7 @@
       <br >
       <div style="text-align: center;">
         <h4 ng-click="vm.goListing()" class="click">{{vm.chat.prodName}}</h4>
-        <h5>Agreed Price: {{vm.chat.agreedPrice | currency : "$" : 0}}</h5>
+        <h5>Prix: {{vm.chat.agreedPrice}} FCFA</h5>
       </div>
       <br >
       <button
@@ -37,33 +37,38 @@
           ng-disabled="vm.listing.sold === true || vm.listing.active === false"
           ng-if="vm.listing.sold != true && vm.listing.listedBy === vm.thisUser"
           class="button button-block button-light button-custom" >
-        Confirm Sold
+        Produit Vendu
       </button>
       <button
           ng-disabled="vm.listing.listedBy != vm.thisUser"
           ng-if="vm.listing.sold != true && vm.listing.listedBy != vm.thisUser"
           class="button button-block button-clear button-balanced chat-info" >
-        Item Available
+        Produit Disponible
       </button>
       <button
           id="sold"
           ng-disabled="vm.listing.sold === true"
           ng-if="vm.listing.sold === true"
           class="button button-block button-clear button-assertive chat-info-sold" >
-        Item Sold
+        Produit Vendu
       </button>
       <button
           ng-click="vm.cancel()"
           ng-if="vm.listing.sold === false && vm.chat.buyerActive === true && vm.chat.sellerActive === true"
           class="button button-block button-light button-outline button-custom" >
-        Leave Discussion
+        Quitter la discussion
       </button>
       <button
           ng-click="vm.cancel()"
           ng-if="vm.chat.buyerActive === false || vm.chat.sellerActive === false || vm.listing.sold === true "
           class="button button-block button-light button-outline button-custom">
-        Close
+        Fermer
       </button>
     </div>
+    <div ng-if="menu.currentUser" style="padding-left: 10px;" class="item no-padding">
+<center> <a href='mailto:fleabrocante223@gmail.com?subject=Signaler la conversation avec "{{ vm.otherUser.profName }}"&body=%0A%0A%0A%0A%0A%0A%0A%0AMerci pour votre signalement%0A-------NE SUPPRIMEZ PAS CE CODE-------%0A{{vm.chat._id}}'><button class="button button-clear button-assertive assertive icon-left ion-alert-circled">
+  Signaler cette conversation
+</button></a></center>
+</div>
   </ion-content>
 </ion-view>

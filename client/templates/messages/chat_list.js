@@ -30,7 +30,7 @@ angular
     onStop: function(err){
       if(err){
         self.contentLoaded = true;
-        self.noPosts = "No internet connection.";
+        self.noPosts = "Verifiez votre connexion internet.";
         return;
       }
     }       
@@ -94,7 +94,7 @@ angular
      return Messages.find({ chatID: chatid, for: Meteor.userId(), read: false }).count();
    };
 
-   this.noPosts = "You have no active discussions."
+   this.noPosts = "Vous n'avez aucune discussion."
 
    //Infinite scroll funcitons.
    $scope.loadMore = function() {

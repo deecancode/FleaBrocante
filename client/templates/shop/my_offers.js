@@ -53,7 +53,7 @@ angular
        }
 
        self.contentLoaded = true;
-       self.noPosts = "You have no pending offers.";
+       self.noPosts = "Aucune offre disponible";
        
        $ionicLoading.hide();
        return;
@@ -61,7 +61,7 @@ angular
       onStop: function(err){
         if(err){
           self.contentLoaded = true;
-          self.noPosts = "No internet connection.";
+          self.noPosts = "Verifiez votre connexion internet";
           return;
         }
       }     
@@ -191,7 +191,7 @@ angular
   this.isSeller = $state.is('app.sell');
   this.isOffer = $state.is('app.myoffers');
 
-  this.noPosts = "You have no pending offers.";
+  this.noPosts = "Aucune offre disponible";
 
   $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
     if ( !document.getElementById("content-main") ) {
