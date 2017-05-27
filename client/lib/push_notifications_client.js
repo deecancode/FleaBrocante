@@ -15,7 +15,8 @@ Meteor.startup(function () {
     ios: {
       alert: true,
       badge: true,
-      sound: true
+      sound: true,
+      clearBadge: true
     }
   });
 });
