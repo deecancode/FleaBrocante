@@ -15,7 +15,7 @@ App.configurePlugin('phonegap-plugin-push', {
 });
 
 App.configurePlugin('cordova-plugin-googleplus', {
-    'REVERSED_CLIENT_ID': 'com.googleusercontent.apps.388901352874'
+    REVERSED_CLIENT_ID: 'com.googleusercontent.apps.388901352874'
 });
 
 App.setPreference("AutoHideSplashScreen", "false");
