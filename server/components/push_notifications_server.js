@@ -7,12 +7,12 @@ Meteor.startup(function () {
       senderID: '388901352874'
     },
     apn: {
-  certData: Assets.getText('dev.pem'),
-  keyData: Assets.getText('devkey.pem'),
-  passphrase: 'hamadoun',
-  production: false,
-  gateway: 'gateway.push.apple.com',
-},
+      certData: Assets.getText('dev.pem'),
+      keyData: Assets.getText('devkey.pem'),
+      passphrase: 'hamadoun',
+      production: false,
+      //gateway: 'gateway.push.apple.com',
+    },
     production: false,
     badge: true,
     sound: true,
