@@ -34,10 +34,7 @@ Meteor.methods({
       badge: 1,
       query: {
         userId: user
-      }
-      apn: {
-      sound: 'default'
-      }
+      },
     });
   }
 });
