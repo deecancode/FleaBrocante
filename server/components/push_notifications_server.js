@@ -35,6 +35,9 @@ Meteor.methods({
       query: {
         userId: user
       },
+      apn: {
+      sound: 'default',
+      }      
     });
   }
 });
