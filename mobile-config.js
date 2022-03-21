@@ -1,13 +1,13 @@
 App.accessRule( "blob:*" );
 
 App.info({
-  id: 'com.mobile.fleabrocante',
+  id: 'com.android.fleabrocante',
   name: 'FleaBrocante',
   description: 'Vente et achat',
-  author: 'Youssouf Ouologuem',
+  author: 'Daouda Doumbia',
   email: 'info@fleabrocante.com',
   website: 'http://fleabrocante.com',
-  version: '2.0',
+  version: '3.0',
 });
 
 App.configurePlugin('phonegap-plugin-push', {
